@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		534702D12B4066C1001E0F50 /* eGym_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D02B4066C1001E0F50 /* eGym_appApp.swift */; };
-		534702D32B4066C1001E0F50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D22B4066C1001E0F50 /* ContentView.swift */; };
+		534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D02B4066C1001E0F50 /* eGymApp.swift */; };
+		534702D32B4066C1001E0F50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D22B4066C1001E0F50 /* MainView.swift */; };
 		534702D52B4066C3001E0F50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534702D42B4066C3001E0F50 /* Assets.xcassets */; };
 		534702D82B4066C3001E0F50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534702D72B4066C3001E0F50 /* Preview Assets.xcassets */; };
 		534702E22B4066C3001E0F50 /* eGym_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702E12B4066C3001E0F50 /* eGym_appTests.swift */; };
 		534702EC2B4066C3001E0F50 /* eGym_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702EB2B4066C3001E0F50 /* eGym_appUITests.swift */; };
 		534702EE2B4066C3001E0F50 /* eGym_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702ED2B4066C3001E0F50 /* eGym_appUITestsLaunchTests.swift */; };
 		534702FB2B4067AA001E0F50 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 534702FA2B4067AA001E0F50 /* .gitignore */; };
+		534703012B406E51001E0F50 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534703002B406E51001E0F50 /* ProfileView.swift */; };
+		534703032B406E80001E0F50 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534703022B406E80001E0F50 /* LoginView.swift */; };
+		534703052B406EDB001E0F50 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534703042B406EDB001E0F50 /* UserModel.swift */; };
+		534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534703062B406F0B001E0F50 /* MainViewModel.swift */; };
+		534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534703082B406F15001E0F50 /* ProfileViewModel.swift */; };
+		5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347030A2B406F1D001E0F50 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +42,8 @@
 
 /* Begin PBXFileReference section */
 		534702CD2B4066C1001E0F50 /* eGym-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eGym-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		534702D02B4066C1001E0F50 /* eGym_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGym_appApp.swift; sourceTree = "<group>"; };
-		534702D22B4066C1001E0F50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		534702D02B4066C1001E0F50 /* eGymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGymApp.swift; sourceTree = "<group>"; };
+		534702D22B4066C1001E0F50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		534702D42B4066C3001E0F50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		534702D72B4066C3001E0F50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		534702DD2B4066C3001E0F50 /* eGym-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eGym-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +52,12 @@
 		534702EB2B4066C3001E0F50 /* eGym_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGym_appUITests.swift; sourceTree = "<group>"; };
 		534702ED2B4066C3001E0F50 /* eGym_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGym_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		534702FA2B4067AA001E0F50 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		534703002B406E51001E0F50 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		534703022B406E80001E0F50 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		534703042B406EDB001E0F50 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		534703062B406F0B001E0F50 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		534703082B406F15001E0F50 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5347030A2B406F1D001E0F50 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +109,10 @@
 		534702CF2B4066C1001E0F50 /* eGym-app */ = {
 			isa = PBXGroup;
 			children = (
-				534702D02B4066C1001E0F50 /* eGym_appApp.swift */,
-				534702D22B4066C1001E0F50 /* ContentView.swift */,
-				534702D42B4066C3001E0F50 /* Assets.xcassets */,
+				534702FF2B406BC5001E0F50 /* Others */,
+				534702FE2B406BBF001E0F50 /* Models */,
+				534702FD2B406BAE001E0F50 /* ViewsModels */,
+				534702FC2B406BA4001E0F50 /* Views */,
 				534702D62B4066C3001E0F50 /* Preview Content */,
 			);
 			path = "eGym-app";
@@ -128,6 +141,43 @@
 				534702ED2B4066C3001E0F50 /* eGym_appUITestsLaunchTests.swift */,
 			);
 			path = "eGym-appUITests";
+			sourceTree = "<group>";
+		};
+		534702FC2B406BA4001E0F50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				534702D22B4066C1001E0F50 /* MainView.swift */,
+				534703002B406E51001E0F50 /* ProfileView.swift */,
+				534703022B406E80001E0F50 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		534702FD2B406BAE001E0F50 /* ViewsModels */ = {
+			isa = PBXGroup;
+			children = (
+				534703062B406F0B001E0F50 /* MainViewModel.swift */,
+				534703082B406F15001E0F50 /* ProfileViewModel.swift */,
+				5347030A2B406F1D001E0F50 /* LoginViewModel.swift */,
+			);
+			path = ViewsModels;
+			sourceTree = "<group>";
+		};
+		534702FE2B406BBF001E0F50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				534703042B406EDB001E0F50 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		534702FF2B406BC5001E0F50 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				534702D42B4066C3001E0F50 /* Assets.xcassets */,
+				534702D02B4066C1001E0F50 /* eGymApp.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +311,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				534702D32B4066C1001E0F50 /* ContentView.swift in Sources */,
-				534702D12B4066C1001E0F50 /* eGym_appApp.swift in Sources */,
+				534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */,
+				534702D32B4066C1001E0F50 /* MainView.swift in Sources */,
+				534703012B406E51001E0F50 /* ProfileView.swift in Sources */,
+				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
+				534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */,
+				534703052B406EDB001E0F50 /* UserModel.swift in Sources */,
+				534703032B406E80001E0F50 /* LoginView.swift in Sources */,
+				5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +490,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +520,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
