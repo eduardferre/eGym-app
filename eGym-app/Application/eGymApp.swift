@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct eGym_appApp: App {
+struct eGym: App {
     var body: some Scene {
         WindowGroup {
             MainView()

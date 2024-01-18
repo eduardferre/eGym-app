@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D35482B4F448500C6A9BF /* RegisterViewModel.swift */; };
+		532D354C2B4F513E00C6A9BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 532D354B2B4F513E00C6A9BF /* SwiftyJSON */; };
 		534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D02B4066C1001E0F50 /* eGymApp.swift */; };
 		534702D32B4066C1001E0F50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D22B4066C1001E0F50 /* MainView.swift */; };
 		534702D52B4066C3001E0F50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534702D42B4066C3001E0F50 /* Assets.xcassets */; };
@@ -21,6 +23,11 @@
 		534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534703062B406F0B001E0F50 /* MainViewModel.swift */; };
 		534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534703082B406F15001E0F50 /* ProfileViewModel.swift */; };
 		5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347030A2B406F1D001E0F50 /* LoginViewModel.swift */; };
+		535937D62B4DD26600EFA144 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535937D52B4DD26600EFA144 /* RegisterView.swift */; };
+		53C599072B599BB600C9CA3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599062B599BB600C9CA3D /* Constants.swift */; };
+		53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599082B599C1B00C9CA3D /* Extensions.swift */; };
+		53C5990D2B599C5A00C9CA3D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C5990C2B599C5A00C9CA3D /* APIManager.swift */; };
+		53C599102B59A09F00C9CA3D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53C5990F2B59A09F00C9CA3D /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		532D35482B4F448500C6A9BF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		534702CD2B4066C1001E0F50 /* eGym-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eGym-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		534702D02B4066C1001E0F50 /* eGymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGymApp.swift; sourceTree = "<group>"; };
 		534702D22B4066C1001E0F50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -58,6 +66,10 @@
 		534703062B406F0B001E0F50 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		534703082B406F15001E0F50 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		5347030A2B406F1D001E0F50 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		535937D52B4DD26600EFA144 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		53C599062B599BB600C9CA3D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		53C599082B599C1B00C9CA3D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		53C5990C2B599C5A00C9CA3D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				532D354C2B4F513E00C6A9BF /* SwiftyJSON in Frameworks */,
+				53C599102B59A09F00C9CA3D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +123,10 @@
 		534702CF2B4066C1001E0F50 /* eGym-app */ = {
 			isa = PBXGroup;
 			children = (
+				53C5990B2B599C4A00C9CA3D /* Services */,
+				53C5990A2B599C2000C9CA3D /* Extensions */,
+				53C599052B599B9B00C9CA3D /* Constants */,
+				53C599042B599B7300C9CA3D /* Application */,
 				534702FF2B406BC5001E0F50 /* Others */,
 				534702FE2B406BBF001E0F50 /* Models */,
 				534702FD2B406BAE001E0F50 /* ViewsModels */,
@@ -149,6 +167,7 @@
 				534702D22B4066C1001E0F50 /* MainView.swift */,
 				534703002B406E51001E0F50 /* ProfileView.swift */,
 				534703022B406E80001E0F50 /* LoginView.swift */,
+				535937D52B4DD26600EFA144 /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,6 +178,7 @@
 				534703062B406F0B001E0F50 /* MainViewModel.swift */,
 				534703082B406F15001E0F50 /* ProfileViewModel.swift */,
 				5347030A2B406F1D001E0F50 /* LoginViewModel.swift */,
+				532D35482B4F448500C6A9BF /* RegisterViewModel.swift */,
 			);
 			path = ViewsModels;
 			sourceTree = "<group>";
@@ -175,9 +195,40 @@
 			isa = PBXGroup;
 			children = (
 				534702D42B4066C3001E0F50 /* Assets.xcassets */,
-				534702D02B4066C1001E0F50 /* eGymApp.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		53C599042B599B7300C9CA3D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				534702D02B4066C1001E0F50 /* eGymApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		53C599052B599B9B00C9CA3D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				53C599062B599BB600C9CA3D /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		53C5990A2B599C2000C9CA3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53C599082B599C1B00C9CA3D /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53C5990B2B599C4A00C9CA3D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				53C5990C2B599C5A00C9CA3D /* APIManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +247,10 @@
 			dependencies = (
 			);
 			name = "eGym-app";
+			packageProductDependencies = (
+				532D354B2B4F513E00C6A9BF /* SwiftyJSON */,
+				53C5990F2B59A09F00C9CA3D /* Alamofire */,
+			);
 			productName = "eGym-app";
 			productReference = 534702CD2B4066C1001E0F50 /* eGym-app.app */;
 			productType = "com.apple.product-type.application";
@@ -268,6 +323,10 @@
 				Base,
 			);
 			mainGroup = 534702C42B4066C0001E0F50;
+			packageReferences = (
+				532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				53C5990E2B59A09F00C9CA3D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 534702CE2B4066C1001E0F50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -311,12 +370,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535937D62B4DD26600EFA144 /* RegisterView.swift in Sources */,
+				53C599072B599BB600C9CA3D /* Constants.swift in Sources */,
+				532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */,
 				534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */,
 				534702D32B4066C1001E0F50 /* MainView.swift in Sources */,
 				534703012B406E51001E0F50 /* ProfileView.swift in Sources */,
 				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
+				53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */,
 				534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */,
 				534703052B406EDB001E0F50 /* UserModel.swift in Sources */,
+				53C5990D2B599C5A00C9CA3D /* APIManager.swift in Sources */,
 				534703032B406E80001E0F50 /* LoginView.swift in Sources */,
 				5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */,
 			);
@@ -650,6 +714,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		53C5990E2B59A09F00C9CA3D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		532D354B2B4F513E00C6A9BF /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		53C5990F2B59A09F00C9CA3D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53C5990E2B59A09F00C9CA3D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 534702C52B4066C0001E0F50 /* Project object */;
 }

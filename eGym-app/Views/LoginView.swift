@@ -6,85 +6,136 @@
 //
 
 import SwiftUI
-import AuthenticationServices
-
 
 struct LoginView: View {
-    
-    @State var email = ""
-    @State var password = ""
+    @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
-        VStack {
-            // Header (Logo Image)
-            HeaderView()
-            
-            // Login Form
-            ZStack {
-                VStack {
-                    TextField("",
-                              text: $email,
-                              prompt: Text("Email Address")
-                                        .foregroundColor(Color("BrokenWhiteApp"))
-                    )
-                        .foregroundColor(Color("BrokenWhiteApp"))
-                        .frame(width: UIScreen.main.bounds.width * 0.90)
-                        .padding(10)
-
+        NavigationStack {
+            VStack {
+                // Header (Logo Image)
+                HeaderView(height: 300)
+                
+                Text("Welcome back warrior!")
+                    .font(.system(size: 28))
+                    .bold()
+                    .foregroundColor(Color("GoldApp"))
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .offset(y: -30)
+                
+                // Login Form
+                ZStack {
+                    VStack {
+                        if !viewModel.isUsernameEmpty {
+                            TextField("",
+                                      text: $viewModel.username,
+                                      prompt: Text("Username")
+                                .foregroundColor(Color("BrokenWhiteApp"))
+                            )
+                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                            .autocorrectionDisabled()
+                            .foregroundColor(Color("BrokenWhiteApp"))
+                            .frame(width: UIScreen.main.bounds.width * 0.90)
+                            .padding(10)
+                        } else {
+                            HStack {
+                                //TODO: Each time the user enters an email, check if it is valid
+                                TextField("",
+                                          text: $viewModel.username,
+                                          prompt: Text("Username")
+                                    .foregroundColor(Color("BrokenWhiteApp"))
+                                )
+                                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                                .autocorrectionDisabled()
+                                .foregroundColor(Color("BrokenWhiteApp"))
+                                .frame(width: UIScreen.main.bounds.width * 0.80)
+                                
+                                ZStack {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                        .foregroundColor(.yellow)
+                                }.padding(.trailing, 8).frame(width: UIScreen.main.bounds.width * 0.08)
+                                
+                            }.frame(width: UIScreen.main.bounds.width * 0.90).padding(10)
+                        }
                         
-                    SecureField("", 
-                                text: $password,
-                                prompt: Text("Password")
-                                          .foregroundColor(Color("BrokenWhiteApp"))
-                      )
-                        .foregroundColor(Color("BrokenWhiteApp"))
-                        .frame(width: UIScreen.main.bounds.width * 0.90)
-                    
-                    
-                    Text("Forgot your password?")
-                        .foregroundColor(Color("BrokenWhiteApp"))
-                        .font.system(
-                        .onTapGesture {
-                            //TODO: Add restore password
+                        if !viewModel.isPasswordEmpty {
+                            SecureField("",
+                                        text: $viewModel.password,
+                                        prompt: Text("Password")
+                                                  .foregroundColor(Color("BrokenWhiteApp"))
+                              )
+                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                            .autocorrectionDisabled()
+                            .foregroundColor(Color("BrokenWhiteApp"))
+                            .frame(width: UIScreen.main.bounds.width * 0.90)
+                        } else {
+                            HStack {
+                                //TODO: Each time the user enters a password, check if it is valid
+                                SecureField("",
+                                            text: $viewModel.password,
+                                          prompt: Text("Password")
+                                    .foregroundColor(Color("BrokenWhiteApp"))
+                                )
+                                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                                .autocorrectionDisabled()
+                                .foregroundColor(Color("BrokenWhiteApp"))
+                                .frame(width: UIScreen.main.bounds.width * 0.80)
+                                
+                                ZStack {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                        .foregroundColor(.yellow)
+                                }.padding(.trailing, 8).frame(width: UIScreen.main.bounds.width * 0.08)
+                                
+                            }.frame(width: UIScreen.main.bounds.width * 0.90).padding(.top, 0.1)
                         }
+                        
+                        Text("Forgot your password?")
+                            .foregroundColor(Color("GoldApp"))
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .padding(.trailing, 20)
+                            .onTapGesture {
+                                //TODO: Add restore password
+                            }.padding(.bottom, 25).padding(.top, 5)
                     
+                        
+                        Button(action: {
+                            viewModel.login()
+                        }, label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 10.0)
+                                    .foregroundColor(Color("GoldApp"))
+                                Text("Log In")
+                                    .foregroundColor(Color.white)
+                                    .bold()
+                            }
+                        }).frame(width: UIScreen.main.bounds.width * 0.90, height: 60)
+                            .offset(y: 10)
+                    }.textFieldStyle(WhiteBorder())
+                }.offset(y: -25).ignoresSafeArea(.all).padding(.bottom, 10)
                     
-                    Button(action: {
-                        //TODO: Attempt log in
-                    }, label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10.0)
-                                .foregroundColor(Color("GoldApp"))
-                            Text("Log In")
-                                .foregroundColor(Color.white)
-                                .bold()
-                        }
-                    }).frame(width: UIScreen.main.bounds.width * 0.90, height: 60)
-                        .offset(y: 10)
-                }.textFieldStyle(WhiteBorder())
-            }.offset(y: -25)
-                
-            // Create Account
-            HStack {
-                Text("Do not have an account? ")
-                    .foregroundStyle(Color("BrokenWhiteApp"))
-                Text("Create an account")
-                    .foregroundStyle(Color("GoldApp"))
-                    .fontWeight(.bold)
-                    .onTapGesture { 
-                        //TODO: Add Create account view
+                // Create Account
+                HStack {
+                    Text("Do not have an account? ")
+                        .foregroundStyle(Color("BrokenWhiteApp"))
+                    NavigationLink {
+                        RegisterView()
+                    } label: {
+                        Text("Create an account")
+                            .foregroundStyle(Color("GoldApp"))
+                            .fontWeight(.bold)
                     }
-            }.offset(y: -15)
-            
+                }.offset(y: -10)
                 
-            
-            // Other Login methods
-            
-            
-            
-            
-            Spacer()
-        }.background(Color(red: 34 / 255, green: 32 / 255, blue: 33 / 255))
+                    
+                
+                // Other Login methods
+                
+                
+                
+                
+                Spacer()
+            }.background(Color("BrownApp"))
+        }
     }
 }
 
@@ -93,12 +144,14 @@ struct LoginView: View {
 }
 
 struct HeaderView: View {
+    var height: CGFloat
+    
     var body: some View {
         ZStack {
             Image("eGym")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.main.bounds.width, height: 300)
+                .frame(width: UIScreen.main.bounds.width, height: height)
         }.offset(y: -20)
     }
 }

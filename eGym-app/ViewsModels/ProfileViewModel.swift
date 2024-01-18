@@ -1,5 +1,5 @@
 //
-//  Profile.swift
+//  ProfileViewModel.swift
 //  eGym-app
 //
 //  Created by Eduard Ferré Sánchez on 30/12/23.
