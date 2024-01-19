@@ -15,7 +15,11 @@ struct TransactionServices {
         var headers = HTTPHeaders()
         headers["content-type"] = "application/x-www-form-urlencoded"
         
-        print(parameters)
+        let parameters: [String: String] = [
+                    "username": "eduardferre",
+                    "password": "edu",
+                    "grant_type": "password"
+                ]
         
         await APIManager.shared.callAPI(strURL: Constants.URL.endpointLogin, queryItems: queryItems, method: .post, headers: headers, parameters: parameters, success: { response in
             do {

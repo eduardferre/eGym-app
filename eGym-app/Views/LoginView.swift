@@ -99,7 +99,7 @@ struct LoginView: View {
                     
                         
                         Button(action: {
-                            let createLoginRequest = CreateLoginRequest(username: loginViewModel.username, password: loginViewModel.password)
+                            let createLoginRequest = CreateLoginRequest(grant_type: "password", username: loginViewModel.username, password: loginViewModel.password, scope: nil, client_id: nil, client_secret: nil)
                             Task  {
                                 await loginViewModel.createLogin(request: createLoginRequest)
                             }

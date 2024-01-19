@@ -21,7 +21,7 @@ class LoginViewModel: ObservableObject {
     init() {}
     
     func createLogin(request: CreateLoginRequest) async {
-        if !validate() { return }
+//        if !validate() { return }
         
         //        loginJSON["username"] = JSON(username)
         //        //TODO: Encode password according backend

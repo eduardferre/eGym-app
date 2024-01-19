@@ -41,7 +41,7 @@ public class APIManager {
             }
 
             // Network request
-            await AF.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            await AF.request(url, method: method, parameters: parameters, headers: headers)
                 .responseJSON { response in
                     switch response.result {
                     case .success:

@@ -8,6 +8,10 @@
 import Foundation
 
 struct CreateLoginRequest: Codable {
-    var username: String?
-    var password: String?
+    var grant_type: String
+    var username: String
+    var password: String
+    var scope: String?
+    var client_id: String?
+    var client_secret: String?
 }
