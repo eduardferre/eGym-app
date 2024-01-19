@@ -28,6 +28,10 @@
 		53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599082B599C1B00C9CA3D /* Extensions.swift */; };
 		53C5990D2B599C5A00C9CA3D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C5990C2B599C5A00C9CA3D /* APIManager.swift */; };
 		53C599102B59A09F00C9CA3D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53C5990F2B59A09F00C9CA3D /* Alamofire */; };
+		53C599122B59E73200C9CA3D /* UserTOServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599112B59E73200C9CA3D /* UserTOServices.swift */; };
+		53C599142B59E77C00C9CA3D /* TransactionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599132B59E77C00C9CA3D /* TransactionServices.swift */; };
+		53C599182B59EA6F00C9CA3D /* CreateLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */; };
+		53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		53C599062B599BB600C9CA3D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		53C599082B599C1B00C9CA3D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		53C5990C2B599C5A00C9CA3D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		53C599112B59E73200C9CA3D /* UserTOServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTOServices.swift; sourceTree = "<group>"; };
+		53C599132B59E77C00C9CA3D /* TransactionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServices.swift; sourceTree = "<group>"; };
+		53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoginRequest.swift; sourceTree = "<group>"; };
+		53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +194,8 @@
 		534702FE2B406BBF001E0F50 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				53C599162B59EA5800C9CA3D /* RequestModels */,
+				53C599152B59EA3B00C9CA3D /* ResponseModels */,
 				534703042B406EDB001E0F50 /* UserModel.swift */,
 			);
 			path = Models;
@@ -227,8 +237,26 @@
 			isa = PBXGroup;
 			children = (
 				53C5990C2B599C5A00C9CA3D /* APIManager.swift */,
+				53C599112B59E73200C9CA3D /* UserTOServices.swift */,
+				53C599132B59E77C00C9CA3D /* TransactionServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		53C599152B59EA3B00C9CA3D /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		53C599162B59EA5800C9CA3D /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+				53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */,
+			);
+			path = RequestModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +400,7 @@
 			files = (
 				535937D62B4DD26600EFA144 /* RegisterView.swift in Sources */,
 				53C599072B599BB600C9CA3D /* Constants.swift in Sources */,
+				53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */,
 				532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */,
 				534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */,
 				534702D32B4066C1001E0F50 /* MainView.swift in Sources */,
@@ -379,9 +408,12 @@
 				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
 				53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */,
 				534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */,
+				53C599182B59EA6F00C9CA3D /* CreateLoginRequest.swift in Sources */,
+				53C599122B59E73200C9CA3D /* UserTOServices.swift in Sources */,
 				534703052B406EDB001E0F50 /* UserModel.swift in Sources */,
 				53C5990D2B599C5A00C9CA3D /* APIManager.swift in Sources */,
 				534703032B406E80001E0F50 /* LoginView.swift in Sources */,
+				53C599142B59E77C00C9CA3D /* TransactionServices.swift in Sources */,
 				5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

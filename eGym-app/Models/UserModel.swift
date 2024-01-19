@@ -7,7 +7,3 @@
 
 import Foundation
 
-struct UserModel: Identifiable, Decodable {
-    
-    
-}

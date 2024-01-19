@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var viewModel = LoginViewModel()
+    @StateObject var loginViewModel = LoginViewModel()
     
     var body: some View {
         NavigationStack {
@@ -26,9 +26,9 @@ struct LoginView: View {
                 // Login Form
                 ZStack {
                     VStack {
-                        if !viewModel.isUsernameEmpty {
+                        if !loginViewModel.isUsernameEmpty {
                             TextField("",
-                                      text: $viewModel.username,
+                                      text: $loginViewModel.username,
                                       prompt: Text("Username")
                                 .foregroundColor(Color("BrokenWhiteApp"))
                             )
@@ -41,7 +41,7 @@ struct LoginView: View {
                             HStack {
                                 //TODO: Each time the user enters an email, check if it is valid
                                 TextField("",
-                                          text: $viewModel.username,
+                                          text: $loginViewModel.username,
                                           prompt: Text("Username")
                                     .foregroundColor(Color("BrokenWhiteApp"))
                                 )
@@ -58,9 +58,9 @@ struct LoginView: View {
                             }.frame(width: UIScreen.main.bounds.width * 0.90).padding(10)
                         }
                         
-                        if !viewModel.isPasswordEmpty {
+                        if !loginViewModel.isPasswordEmpty {
                             SecureField("",
-                                        text: $viewModel.password,
+                                        text: $loginViewModel.password,
                                         prompt: Text("Password")
                                                   .foregroundColor(Color("BrokenWhiteApp"))
                               )
@@ -72,7 +72,7 @@ struct LoginView: View {
                             HStack {
                                 //TODO: Each time the user enters a password, check if it is valid
                                 SecureField("",
-                                            text: $viewModel.password,
+                                            text: $loginViewModel.password,
                                           prompt: Text("Password")
                                     .foregroundColor(Color("BrokenWhiteApp"))
                                 )
@@ -99,7 +99,10 @@ struct LoginView: View {
                     
                         
                         Button(action: {
-                            viewModel.login()
+                            let createLoginRequest = CreateLoginRequest(username: loginViewModel.username, password: loginViewModel.password)
+                            Task  {
+                                await loginViewModel.createLogin(request: createLoginRequest)
+                            }
                         }, label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10.0)

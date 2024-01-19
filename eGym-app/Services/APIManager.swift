@@ -24,7 +24,7 @@ public class APIManager {
     ///   - success:                        Completion handler for get `Data`
     ///   - failure:                           Completion handler for get `FailureMessage`(a.k.a. `String`)
     
-    func callAPI(serverURL: String? = "", strURL: String, queryItems: [URLQueryItem]? = nil, method: HTTPMethod = .get, headers: HTTPHeaders? = nil, parameters: Parameters? = nil, success: @escaping ((AFDataResponse<Any>) -> Void), failure: @escaping ((FailureMessage) -> Void)) {
+    func callAPI(serverURL: String? = "", strURL: String, queryItems: [URLQueryItem]? = nil, method: HTTPMethod = .get, headers: HTTPHeaders? = nil, parameters: Parameters? = nil, success: @escaping ((AFDataResponse<Any>) -> Void), failure: @escaping ((FailureMessage) -> Void)) async {
             var finalURL = serverURL ?? ""
 
             if let serverURL = serverURL, serverURL == "" {
@@ -41,7 +41,7 @@ public class APIManager {
             }
 
             // Network request
-            AF.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+            await AF.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
                 .responseJSON { response in
                     switch response.result {
                     case .success:

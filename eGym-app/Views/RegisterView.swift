@@ -22,7 +22,7 @@ struct RegisterView: View {
                         .foregroundStyle(Color("GoldApp"))
                         .bold()
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 20)x
+                        .padding(.leading, 20)
                         .offset(y: -10)
                     
                     HStack {

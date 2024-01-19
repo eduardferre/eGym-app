@@ -13,21 +13,30 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     @Published var isUsernameEmpty = false
     @Published var isPasswordEmpty = false
+    
+    @Published var createLoginResponse: CreateLoginResponse?
+    
     private var loginJSON = JSON()
     
     init() {}
     
-    func login() {
+    func createLogin(request: CreateLoginRequest) async {
         if !validate() { return }
         
-        
-        loginJSON["username"] = JSON(username)
-        //TODO: Encode password according backend
-        loginJSON["password"] = JSON(password)
-        
-        print(loginJSON)
+        //        loginJSON["username"] = JSON(username)
+        //        //TODO: Encode password according backend
+        //        loginJSON["password"] = JSON(password)
+        //        print(loginJSON)
         
         //TODO: Call login endpoint and send information
+        
+        await TransactionServices.shared.callCreateLogin(parameters: request.dictionary ?? [:]) { response in
+            if let response = response {
+                print(response)
+            }
+        } failure: { error in
+                print(error)
+            }
     }
     
     private func validate() -> Bool {
