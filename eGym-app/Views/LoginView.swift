@@ -39,7 +39,6 @@ struct LoginView: View {
                             .padding(10)
                         } else {
                             HStack {
-                                //TODO: Each time the user enters an email, check if it is valid
                                 TextField("",
                                           text: $loginViewModel.username,
                                           prompt: Text("Username")
@@ -70,7 +69,6 @@ struct LoginView: View {
                             .frame(width: UIScreen.main.bounds.width * 0.90)
                         } else {
                             HStack {
-                                //TODO: Each time the user enters a password, check if it is valid
                                 SecureField("",
                                             text: $loginViewModel.password,
                                           prompt: Text("Password")
@@ -99,9 +97,13 @@ struct LoginView: View {
                     
                         
                         Button(action: {
-                            let createLoginRequest = CreateLoginRequest(grant_type: "password", username: loginViewModel.username, password: loginViewModel.password, scope: nil, client_id: nil, client_secret: nil)
-                            Task  {
-                                await loginViewModel.createLogin(request: createLoginRequest)
+//                            if loginViewModel.validate() {
+                                let createLoginRequest = CreateLoginRequest(grant_type: "password", username: loginViewModel.username, password: loginViewModel.password, scope: nil, client_id: nil, client_secret: nil)
+                                Task  {
+                                    await loginViewModel.createLogin(request: createLoginRequest)
+//                                }
+                                
+                            
                             }
                         }, label: {
                             ZStack {

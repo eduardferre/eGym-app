@@ -44,69 +44,65 @@ public class APIManager {
             await AF.request(url, method: method, parameters: parameters, headers: headers)
                 .validate()
                 .responseJSON { response in
-                    guard case let .failure(error) = response.result else { return }
-
-                        if let error = error as? AFError {
-                            switch error {
-                            case .invalidURL(let url):
-                                print("Invalid URL: \(url) - \(error.localizedDescription)")
-                            case .parameterEncodingFailed(let reason):
-                                print("Parameter encoding failed: \(error.localizedDescription)")
-                                print("Failure Reason: \(reason)")
-                            case .multipartEncodingFailed(let reason):
-                                print("Multipart encoding failed: \(error.localizedDescription)")
-                                print("Failure Reason: \(reason)")
-                            case .responseValidationFailed(let reason):
-                                print("Response validation failed: \(error.localizedDescription)")
-                                print("Failure Reason: \(reason)")
-
-                                switch reason {
-                                case .dataFileNil, .dataFileReadFailed:
-                                    print("Downloaded file could not be read")
-                                case .missingContentType(let acceptableContentTypes):
-                                    print("Content Type Missing: \(acceptableContentTypes)")
-                                case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
-                                    print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
-                                case .unacceptableStatusCode(let code):
-                                    print("Response status code was unacceptable: \(code)")
-                                case .customValidationFailed(error: let error):
-                                    print(error.localizedDescription)
-                                }
-                            case .responseSerializationFailed(let reason):
-                                print("Response serialization failed: \(error.localizedDescription)")
-                                print("Failure Reason: \(reason)")
-                            case .createUploadableFailed(error: let error):
-                                print(error.localizedDescription)
-                            case .createURLRequestFailed(error: let error):
-                                print(error.localizedDescription)
-                            case .downloadedFileMoveFailed(error: let error, source: let source, destination: let destination):
-                                print(error.localizedDescription)
-                            case .explicitlyCancelled:
-                                print(error.localizedDescription)
-                            case .parameterEncoderFailed(reason: let reason):
-                                print(error.localizedDescription)
-                            case .requestAdaptationFailed(error: let error):
-                                print(error.localizedDescription)
-                            case .requestRetryFailed(retryError: let retryError, originalError: let originalError):
-                                print(error.localizedDescription)
-                            case .serverTrustEvaluationFailed(reason: let reason):
-                                print(error.localizedDescription)
-                            case .sessionDeinitialized:
-                                print(error.localizedDescription)
-                            case .sessionInvalidated(error: let error):
-                                print(error!.localizedDescription)
-                            case .sessionTaskFailed(error: let error):
-                                print(error.localizedDescription)
-                            case .urlRequestValidationFailed(reason: let reason):
+                    switch response.result {
+                    case .success:
+                        success(response)
+                    case let .failure(error):
+                        switch error {
+                        case .invalidURL(let url):
+                            print("Invalid URL: \(url) - \(error.localizedDescription)")
+                        case .parameterEncodingFailed(let reason):
+                            print("Parameter encoding failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                        case .multipartEncodingFailed(let reason):
+                            print("Multipart encoding failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                        case .responseValidationFailed(let reason):
+                            print("Response validation failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                            
+                            switch reason {
+                            case .dataFileNil, .dataFileReadFailed:
+                                print("Downloaded file could not be read")
+                            case .missingContentType(let acceptableContentTypes):
+                                print("Content Type Missing: \(acceptableContentTypes)")
+                            case .unacceptableContentType(let acceptableContentTypes, let responseContentType):
+                                print("Response content type: \(responseContentType) was unacceptable: \(acceptableContentTypes)")
+                            case .unacceptableStatusCode(let code):
+                                print("Response status code was unacceptable: \(code)")
+                            case .customValidationFailed(error: let error):
                                 print(error.localizedDescription)
                             }
-
-                            print("Underlying error: \(String(describing: error.underlyingError))")
-                        } else if let error = error as? URLError {
-                            print("URLError occurred: \(error)")
-                        } else {
-                            print("Unknown error: \(error)")
+                        case .responseSerializationFailed(let reason):
+                            print("Response serialization failed: \(error.localizedDescription)")
+                            print("Failure Reason: \(reason)")
+                        case .createUploadableFailed(error: let error):
+                            print(error.localizedDescription)
+                        case .createURLRequestFailed(error: let error):
+                            print(error.localizedDescription)
+                        case .downloadedFileMoveFailed(error: let error, source: _, destination: _):
+                            print(error.localizedDescription)
+                        case .explicitlyCancelled:
+                            print(error.localizedDescription)
+                        case .parameterEncoderFailed(reason: _):
+                            print(error.localizedDescription)
+                        case .requestAdaptationFailed(error: let error):
+                            print(error.localizedDescription)
+                        case .requestRetryFailed(retryError: _, originalError: _):
+                            print(error.localizedDescription)
+                        case .serverTrustEvaluationFailed(reason: _):
+                            print(error.localizedDescription)
+                        case .sessionDeinitialized:
+                            print(error.localizedDescription)
+                        case .sessionInvalidated(error: let error):
+                            print(error!.localizedDescription)
+                        case .sessionTaskFailed(error: let error):
+                            print(error.localizedDescription)
+                        case .urlRequestValidationFailed(reason: _):
+                            print(error.localizedDescription)
                         }
+                        print("Underlying error: \(String(describing: error.underlyingError))")
+                    }
                 }
         }
 }

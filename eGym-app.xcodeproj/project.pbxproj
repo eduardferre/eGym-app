@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5328CF262B5EDC0F00F7BAB8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */; };
+		5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF282B5EFBEB00F7BAB8 /* Auth.swift */; };
+		5328CF2C2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5328CF2B2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper */; };
 		532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D35482B4F448500C6A9BF /* RegisterViewModel.swift */; };
 		532D354C2B4F513E00C6A9BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 532D354B2B4F513E00C6A9BF /* SwiftyJSON */; };
 		534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D02B4066C1001E0F50 /* eGymApp.swift */; };
@@ -53,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		5316C1E52B5A0ACB001D7019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		5328CF282B5EFBEB00F7BAB8 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		532D35482B4F448500C6A9BF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		534702CD2B4066C1001E0F50 /* eGym-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eGym-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		534702D02B4066C1001E0F50 /* eGymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGymApp.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			files = (
 				532D354C2B4F513E00C6A9BF /* SwiftyJSON in Frameworks */,
 				53C599102B59A09F00C9CA3D /* Alamofire in Frameworks */,
+				5328CF2C2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5328CF272B5EFBDE00F7BAB8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5328CF282B5EFBEB00F7BAB8 /* Auth.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		534702C42B4066C0001E0F50 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +146,7 @@
 		534702CF2B4066C1001E0F50 /* eGym-app */ = {
 			isa = PBXGroup;
 			children = (
+				5328CF272B5EFBDE00F7BAB8 /* Utilities */,
 				5316C1E52B5A0ACB001D7019 /* Info.plist */,
 				53C5990B2B599C4A00C9CA3D /* Services */,
 				53C5990A2B599C2000C9CA3D /* Extensions */,
@@ -178,6 +193,7 @@
 				534703002B406E51001E0F50 /* ProfileView.swift */,
 				534703022B406E80001E0F50 /* LoginView.swift */,
 				535937D52B4DD26600EFA144 /* RegisterView.swift */,
+				5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +296,7 @@
 			packageProductDependencies = (
 				532D354B2B4F513E00C6A9BF /* SwiftyJSON */,
 				53C5990F2B59A09F00C9CA3D /* Alamofire */,
+				5328CF2B2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper */,
 			);
 			productName = "eGym-app";
 			productReference = 534702CD2B4066C1001E0F50 /* eGym-app.app */;
@@ -356,6 +373,7 @@
 			packageReferences = (
 				532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				53C5990E2B59A09F00C9CA3D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5328CF2A2B5EFF0A00F7BAB8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
 			);
 			productRefGroup = 534702CE2B4066C1001E0F50 /* Products */;
 			projectDirPath = "";
@@ -405,6 +423,7 @@
 				53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */,
 				532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */,
 				534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */,
+				5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */,
 				534702D32B4066C1001E0F50 /* MainView.swift in Sources */,
 				534703012B406E51001E0F50 /* ProfileView.swift in Sources */,
 				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
@@ -417,6 +436,7 @@
 				534703032B406E80001E0F50 /* LoginView.swift in Sources */,
 				53C599142B59E77C00C9CA3D /* TransactionServices.swift in Sources */,
 				5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */,
+				5328CF262B5EDC0F00F7BAB8 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +772,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5328CF2A2B5EFF0A00F7BAB8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 		532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -771,6 +799,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5328CF2B2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5328CF2A2B5EFF0A00F7BAB8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
 		532D354B2B4F513E00C6A9BF /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
