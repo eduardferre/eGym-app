@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-public typealias FailureMessage = String
+public typealias FailureMessage = AFError
 
 
 public class APIManager {
@@ -32,7 +32,8 @@ public class APIManager {
             }
 
             guard var url = URLComponents(string: "\(finalURL)\(strURL)") else {
-                failure("Invalid URL")
+                let error = AFError.invalidURL(url: "\(finalURL)\(strURL)")
+                failure(error)
                 return
             }
 
@@ -101,7 +102,7 @@ public class APIManager {
                         case .urlRequestValidationFailed(reason: _):
                             print(error.localizedDescription)
                         }
-                        print("Underlying error: \(String(describing: error.underlyingError))")
+                        failure(error)
                     }
                 }
         }

@@ -6,19 +6,33 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct RootView: View {
     @EnvironmentObject var auth: Auth
+    @StateObject var rootViewModel = RootViewModel()
     
     var body: some View {
-        if auth.isLoggedIn {
-            MainView()
+        if $rootViewModel.isFirstTime.wrappedValue {
+            LoadingView()
         } else {
-            LoginView()
+            if auth.isLoggedIn {
+                MainView()
+            } else {
+                LoginView()
+            }
         }
     }
 }
 
 #Preview {
     RootView()
+}
+
+class RootViewModel: ObservableObject {
+    @Published var isFirstTime: Bool = true
+    
+    func setFalse() {
+        isFirstTime = false
+    }
 }

@@ -33,6 +33,16 @@ class RegisterViewModel: ObservableObject {
     @Published var isVerifyPasswordEmpty = false
     
     //TODO: Implement register validations and call register endpoint
+    @Published var createRegisterResponse: CreateRegisterResponse?
     
+    func createRegister(request: CreateRegisterResponse) async {
+        await TransactionServices.shared.callCreateRegister(parameters: request.dictionary ?? [:]) { response in
+            if let response = response {
+                
+            }
+        } failure: { error in
+            print(error)
+            }
+    }
     
 }

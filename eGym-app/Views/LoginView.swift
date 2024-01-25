@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct LoginView: View {
     @StateObject var loginViewModel = LoginViewModel()
@@ -26,66 +27,31 @@ struct LoginView: View {
                 // Login Form
                 ZStack {
                     VStack {
-                        if !loginViewModel.isUsernameEmpty {
-                            TextField("",
-                                      text: $loginViewModel.username,
-                                      prompt: Text("Username")
-                                .foregroundColor(Color("BrokenWhiteApp"))
-                            )
-                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                            .autocorrectionDisabled()
+                        TextField("",
+                                  text: $loginViewModel.username,
+                                  prompt: Text("Username")
                             .foregroundColor(Color("BrokenWhiteApp"))
-                            .frame(width: UIScreen.main.bounds.width * 0.90)
-                            .padding(10)
-                        } else {
-                            HStack {
-                                TextField("",
-                                          text: $loginViewModel.username,
-                                          prompt: Text("Username")
-                                    .foregroundColor(Color("BrokenWhiteApp"))
-                                )
-                                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                                .autocorrectionDisabled()
-                                .foregroundColor(Color("BrokenWhiteApp"))
-                                .frame(width: UIScreen.main.bounds.width * 0.80)
-                                
-                                ZStack {
-                                    Image(systemName: "exclamationmark.triangle.fill")
-                                        .foregroundColor(.yellow)
-                                }.padding(.trailing, 8).frame(width: UIScreen.main.bounds.width * 0.08)
-                                
-                            }.frame(width: UIScreen.main.bounds.width * 0.90).padding(10)
+                        ).onSubmit() {
+                            loginViewModel.validate()
                         }
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .autocorrectionDisabled()
+                        .foregroundColor(Color("BrokenWhiteApp"))
+                        .frame(width: UIScreen.main.bounds.width * 0.90)
+                        .padding(10)
                         
-                        if !loginViewModel.isPasswordEmpty {
-                            SecureField("",
-                                        text: $loginViewModel.password,
-                                        prompt: Text("Password")
-                                                  .foregroundColor(Color("BrokenWhiteApp"))
-                              )
-                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                            .autocorrectionDisabled()
-                            .foregroundColor(Color("BrokenWhiteApp"))
-                            .frame(width: UIScreen.main.bounds.width * 0.90)
-                        } else {
-                            HStack {
-                                SecureField("",
-                                            text: $loginViewModel.password,
-                                          prompt: Text("Password")
-                                    .foregroundColor(Color("BrokenWhiteApp"))
-                                )
-                                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
-                                .autocorrectionDisabled()
-                                .foregroundColor(Color("BrokenWhiteApp"))
-                                .frame(width: UIScreen.main.bounds.width * 0.80)
-                                
-                                ZStack {
-                                    Image(systemName: "exclamationmark.triangle.fill")
-                                        .foregroundColor(.yellow)
-                                }.padding(.trailing, 8).frame(width: UIScreen.main.bounds.width * 0.08)
-                                
-                            }.frame(width: UIScreen.main.bounds.width * 0.90).padding(.top, 0.1)
+                        SecureField("",
+                                    text: $loginViewModel.password,
+                                    prompt: Text("Password")
+                                              .foregroundColor(Color("BrokenWhiteApp"))
+                          ).onSubmit() {
+                            loginViewModel.validate()
                         }
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .autocorrectionDisabled()
+                        .foregroundColor(Color("BrokenWhiteApp"))
+                        .frame(width: UIScreen.main.bounds.width * 0.90)
+                        
                         
                         Text("Forgot your password?")
                             .foregroundColor(Color("GoldApp"))
@@ -97,13 +63,14 @@ struct LoginView: View {
                     
                         
                         Button(action: {
-//                            if loginViewModel.validate() {
                                 let createLoginRequest = CreateLoginRequest(grant_type: "password", username: loginViewModel.username, password: loginViewModel.password, scope: nil, client_id: nil, client_secret: nil)
 
                                 Task {
                                     await loginViewModel.createLogin(request: createLoginRequest)
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                        loginViewModel.toggleFailed()
+                                    }
                                 }
-//                            }
                         }, label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10.0)
@@ -112,9 +79,14 @@ struct LoginView: View {
                                     .foregroundColor(Color.white)
                                     .bold()
                             }
-                        }).frame(width: UIScreen.main.bounds.width * 0.90, height: 60)
+                        }).toast(isPresenting: $loginViewModel.hasFailed) {
+                            AlertToast(displayMode: .hud, type: .error(Color.red), title: $loginViewModel.errorMsg.wrappedValue)
+                        }
+                            .disabled($loginViewModel.isDisabled.wrappedValue)
+                            .frame(width: UIScreen.main.bounds.width * 0.90, height: 60)
                             .offset(y: 10)
                     }.textFieldStyle(WhiteBorder())
+                        .zIndex(2)
                 }.offset(y: -25).ignoresSafeArea(.all).padding(.bottom, 10)
                     
                 // Create Account

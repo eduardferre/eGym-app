@@ -15,11 +15,11 @@ struct TransactionServices {
         var headers = HTTPHeaders()
         headers["content-type"] = "application/x-www-form-urlencoded"
         
-        let parameters: [String: String] = [
-            "username": "eduardferre",
-            "password": "edu",
-            "grant_type": "password"
-        ]
+//        let parameters: [String: String] = [
+//            "username": "eduardferre",
+//            "password": "edu",
+//            "grant_type": "password"
+//        ]
         
         await APIManager.shared.callAPI(strURL: Constants.URL.endpointLogin, queryItems: queryItems, method: .post, headers: headers, parameters: parameters, success: { response in
             do {
@@ -28,10 +28,13 @@ struct TransactionServices {
                     success(createLoginResponse)
                 }
             } catch {
-                failure(FailureMessage(error.localizedDescription))
+                print("ERROR: " + String(error.asAFError?.responseCode ?? 0))
+                failure(error as! FailureMessage)
             }
         }, failure: { error in
-            failure(FailureMessage(error))})
+            print("ERROR: " + error.localizedDescription)
+            failure(error)
+        })
     }
     
     func callCreateRegister(queryItems: [URLQueryItem]? = nil, parameters: Parameters? = nil, success: @escaping (_ result: CreateRegisterResponse?) -> Void, failure: @escaping (_ failureMsg: FailureMessage) -> Void) async {
@@ -69,9 +72,10 @@ struct TransactionServices {
                     success(createRegisterResponse)
                 }
             } catch {
-                failure(FailureMessage(error.localizedDescription))
+                failure(error as! FailureMessage)
             }
         }, failure: { error in
-            failure(FailureMessage(error))})
+            failure(error)
+        })
     }
 }

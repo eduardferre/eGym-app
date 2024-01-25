@@ -13,10 +13,12 @@ class LoginViewModel: ObservableObject {
     @Published var password = ""
     @Published var isUsernameEmpty = false
     @Published var isPasswordEmpty = false
+    @Published var isDisabled = false
+    
+    @Published var errorMsg = ""
+    @Published var hasFailed = false
     
     @Published var createLoginResponse: CreateLoginResponse?
-    
-    private var loginJSON = JSON()
     
     func createLogin(request: CreateLoginRequest) async {
         await TransactionServices.shared.callCreateLogin(parameters: request.dictionary ?? [:]) { response in
@@ -24,28 +26,33 @@ class LoginViewModel: ObservableObject {
                 Auth.shared.setCredentials(accessToken: response.accessToken, refreshToken: response.refreshToken)
             }
         } failure: { error in
-            print(error)
+            self.errorMsg = error.responseCode == 401 ? "Username/Password are invalid!" : "Ooops! There's a problem, sorry!"
+            self.hasFailed = true
             }
     }
     
-    func validate() -> Bool {
+    func validate() {
         if username.trimmingCharacters(in: .whitespaces).isEmpty &&
             password.trimmingCharacters(in: .whitespaces).isEmpty {
             isUsernameEmpty = true
             isPasswordEmpty = true
-            return false
+            isDisabled = true
         } else if username.trimmingCharacters(in: .whitespaces).isEmpty {
             isUsernameEmpty = true
             isPasswordEmpty = false
-            return false
+            isDisabled = true
         } else if password.trimmingCharacters(in: .whitespaces).isEmpty {
             isUsernameEmpty = false
             isPasswordEmpty = true
-            return false
+            isDisabled = true
+        } else {
+            isUsernameEmpty = false
+            isPasswordEmpty = false
+            isDisabled = false
         }
-        
-        isUsernameEmpty = false
-        isPasswordEmpty = false
-        return true
+    }
+    
+    func toggleFailed() {
+        self.hasFailed.toggle()
     }
 }
