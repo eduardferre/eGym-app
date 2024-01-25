@@ -1,0 +1,5 @@
+disabled_rules:
+- trailing_whitespaces
+
+excluded:
+-${PWD}/Pods

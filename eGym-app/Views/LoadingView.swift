@@ -42,13 +42,14 @@ struct LoadingView: View {
                                 loadingText += String(character)
                             }
                         }
-                    }.padding(.bottom, 150)
+                    }
+                
+                Spacer()
                 
                 Text("©eSolutions - Eduard Ferré Sánchez")
                     .font(.system(size:10))
                     .foregroundStyle(Color("GoldApp"))
                 
-                Spacer()
             }.background(Color("BrownApp"))
         }
     }

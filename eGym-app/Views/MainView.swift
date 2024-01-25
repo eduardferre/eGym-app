@@ -8,10 +8,27 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var isLoading = true
     
     var body: some View {
-        ZStack {
-            
+        let noView: EmptyView = {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                //TODO: FETCH DATA
+                isLoading = false
+            }
+            return EmptyView()
+        }()
+        noView
+        
+        if isLoading {
+            LoadingView()
+        } else {
+            ZStack {
+                VStack {
+                    Text("HOLA")
+                    Button(action: Auth.shared.logout, label: { Text("LOGOUT") })
+                }
+            }
         }
     }
 }

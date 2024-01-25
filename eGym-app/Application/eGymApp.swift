@@ -9,17 +9,10 @@ import SwiftUI
 
 @main
 struct eGym: App {
-    @StateObject var auth = Auth()
     
     var body: some Scene {
         WindowGroup {
-            if auth.isLoggedIn {
-                MainView()
-                    .environmentObject(auth)
-            } else {
-                LoginView()
-                    .environmentObject(auth)
-            }
+            RootView().environmentObject(Auth.shared)
         }
     }
 }

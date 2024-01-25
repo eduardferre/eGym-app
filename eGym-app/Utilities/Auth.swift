@@ -10,16 +10,6 @@ import SwiftKeychainWrapper
 
 class Auth: ObservableObject {
     
-    struct Credentials {
-        var accessToken: String?
-        var refreshToken: String?
-    }
-    
-    enum KeychainKey: String {
-        case accessToken
-        case refreshToken
-    }
-    
     static let shared: Auth = Auth()
     private let keychain: KeychainWrapper = KeychainWrapper.standard
     

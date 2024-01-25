@@ -9,7 +9,7 @@ import Foundation
 
 public struct Constants {
 //    public static let serverURL: String = "http://localhost:8000"
-    public static let serverURL: String = "http://192.168.1.40:8000"
+    public static let serverURL: String = "http://192.168.1.14:8000"
     
     private static let transactionsPath: String = "/transactions"
     private static let usersTOPath: String = "/usersTO"

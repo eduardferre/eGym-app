@@ -99,12 +99,11 @@ struct LoginView: View {
                         Button(action: {
 //                            if loginViewModel.validate() {
                                 let createLoginRequest = CreateLoginRequest(grant_type: "password", username: loginViewModel.username, password: loginViewModel.password, scope: nil, client_id: nil, client_secret: nil)
-                                Task  {
+
+                                Task {
                                     await loginViewModel.createLogin(request: createLoginRequest)
-//                                }
-                                
-                            
-                            }
+                                }
+//                            }
                         }, label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 10.0)
@@ -120,7 +119,7 @@ struct LoginView: View {
                     
                 // Create Account
                 HStack {
-                    Text("Do not have an account? ")
+                    Text("Do not have an account?")
                         .foregroundStyle(Color("BrokenWhiteApp"))
                     NavigationLink {
                         RegisterView()
@@ -136,9 +135,11 @@ struct LoginView: View {
                 // Other Login methods
                 
                 
-                
-                
                 Spacer()
+                
+                Text("©eSolutions - Eduard Ferré Sánchez")
+                    .font(.system(size:10))
+                    .foregroundStyle(Color("GoldApp"))
             }.background(Color("BrownApp"))
         }
     }
@@ -173,5 +174,3 @@ struct WhiteBorder: TextFieldStyle {
             )
     }
 }
-
-

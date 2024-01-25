@@ -16,21 +16,16 @@ class LoginViewModel: ObservableObject {
     
     @Published var createLoginResponse: CreateLoginResponse?
     
-    @Published var isUserAuthorized = false
-    
     private var loginJSON = JSON()
-    
-    init() {}
     
     func createLogin(request: CreateLoginRequest) async {
         await TransactionServices.shared.callCreateLogin(parameters: request.dictionary ?? [:]) { response in
             if let response = response {
-                print(response)
+                Auth.shared.setCredentials(accessToken: response.accessToken, refreshToken: response.refreshToken)
             }
         } failure: { error in
-            return
+            print(error)
             }
-        isUserAuthorized = true
     }
     
     func validate() -> Bool {

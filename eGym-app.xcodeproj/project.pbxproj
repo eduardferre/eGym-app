@@ -10,6 +10,9 @@
 		5328CF262B5EDC0F00F7BAB8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */; };
 		5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF282B5EFBEB00F7BAB8 /* Auth.swift */; };
 		5328CF2C2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5328CF2B2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper */; };
+		5328CF312B61C9C500F7BAB8 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF302B61C9C400F7BAB8 /* Credentials.swift */; };
+		5328CF332B61C9E800F7BAB8 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF322B61C9E800F7BAB8 /* KeychainKey.swift */; };
+		5328CF362B61CD5B00F7BAB8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5328CF352B61CD5B00F7BAB8 /* .swiftlint.yml */; };
 		532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D35482B4F448500C6A9BF /* RegisterViewModel.swift */; };
 		532D354C2B4F513E00C6A9BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 532D354B2B4F513E00C6A9BF /* SwiftyJSON */; };
 		534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D02B4066C1001E0F50 /* eGymApp.swift */; };
@@ -35,6 +38,9 @@
 		53C599142B59E77C00C9CA3D /* TransactionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599132B59E77C00C9CA3D /* TransactionServices.swift */; };
 		53C599182B59EA6F00C9CA3D /* CreateLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */; };
 		53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */; };
+		53E0D8D72B61D4A200A63179 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8D62B61D4A200A63179 /* RootView.swift */; };
+		53E0D8D92B61E65F00A63179 /* CreateRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8D82B61E65F00A63179 /* CreateRegisterResponse.swift */; };
+		53E0D8DB2B61E75B00A63179 /* CreateRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,9 @@
 		5316C1E52B5A0ACB001D7019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5328CF282B5EFBEB00F7BAB8 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		5328CF302B61C9C400F7BAB8 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		5328CF322B61C9E800F7BAB8 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		5328CF352B61CD5B00F7BAB8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		532D35482B4F448500C6A9BF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		534702CD2B4066C1001E0F50 /* eGym-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eGym-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		534702D02B4066C1001E0F50 /* eGymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGymApp.swift; sourceTree = "<group>"; };
@@ -84,6 +93,9 @@
 		53C599132B59E77C00C9CA3D /* TransactionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServices.swift; sourceTree = "<group>"; };
 		53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoginRequest.swift; sourceTree = "<group>"; };
 		53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoginResponse.swift; sourceTree = "<group>"; };
+		53E0D8D62B61D4A200A63179 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		53E0D8D82B61E65F00A63179 /* CreateRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegisterResponse.swift; sourceTree = "<group>"; };
+		53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegisterRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +134,19 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		5328CF2F2B61C9B600F7BAB8 /* AuthModels */ = {
+			isa = PBXGroup;
+			children = (
+				5328CF302B61C9C400F7BAB8 /* Credentials.swift */,
+				5328CF322B61C9E800F7BAB8 /* KeychainKey.swift */,
+			);
+			path = AuthModels;
+			sourceTree = "<group>";
+		};
 		534702C42B4066C0001E0F50 = {
 			isa = PBXGroup;
 			children = (
+				5328CF352B61CD5B00F7BAB8 /* .swiftlint.yml */,
 				534702FA2B4067AA001E0F50 /* .gitignore */,
 				534702CF2B4066C1001E0F50 /* eGym-app */,
 				534702E02B4066C3001E0F50 /* eGym-appTests */,
@@ -212,6 +234,7 @@
 		534702FE2B406BBF001E0F50 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5328CF2F2B61C9B600F7BAB8 /* AuthModels */,
 				53C599162B59EA5800C9CA3D /* RequestModels */,
 				53C599152B59EA3B00C9CA3D /* ResponseModels */,
 				534703042B406EDB001E0F50 /* UserModel.swift */,
@@ -231,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				534702D02B4066C1001E0F50 /* eGymApp.swift */,
+				53E0D8D62B61D4A200A63179 /* RootView.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -265,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */,
+				53E0D8D82B61E65F00A63179 /* CreateRegisterResponse.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -273,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */,
+				53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */,
 			);
 			path = RequestModels;
 			sourceTree = "<group>";
@@ -374,6 +400,7 @@
 				532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				53C5990E2B59A09F00C9CA3D /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5328CF2A2B5EFF0A00F7BAB8 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				5328CF342B61CCC900F7BAB8 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 534702CE2B4066C1001E0F50 /* Products */;
 			projectDirPath = "";
@@ -391,6 +418,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5328CF362B61CD5B00F7BAB8 /* .swiftlint.yml in Resources */,
 				534702D82B4066C3001E0F50 /* Preview Assets.xcassets in Resources */,
 				534702FB2B4067AA001E0F50 /* .gitignore in Resources */,
 				534702D52B4066C3001E0F50 /* Assets.xcassets in Resources */,
@@ -420,12 +448,17 @@
 			files = (
 				535937D62B4DD26600EFA144 /* RegisterView.swift in Sources */,
 				53C599072B599BB600C9CA3D /* Constants.swift in Sources */,
+				5328CF332B61C9E800F7BAB8 /* KeychainKey.swift in Sources */,
+				5328CF312B61C9C500F7BAB8 /* Credentials.swift in Sources */,
 				53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */,
 				532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */,
 				534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */,
 				5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */,
+				53E0D8DB2B61E75B00A63179 /* CreateRegisterRequest.swift in Sources */,
 				534702D32B4066C1001E0F50 /* MainView.swift in Sources */,
 				534703012B406E51001E0F50 /* ProfileView.swift in Sources */,
+				53E0D8D72B61D4A200A63179 /* RootView.swift in Sources */,
+				53E0D8D92B61E65F00A63179 /* CreateRegisterResponse.swift in Sources */,
 				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
 				53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */,
 				534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */,
@@ -778,6 +811,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.0.1;
+			};
+		};
+		5328CF342B61CCC900F7BAB8 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.0;
 			};
 		};
 		532D354A2B4F513E00C6A9BF /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
