@@ -42,31 +42,31 @@ struct TransactionServices {
         headers["content-type"] = "application/json"
         
         
-        let parameters: [String: Any?] = [
-          "username": "edu",
-          "password": "edu",
-          "firstname": "Eduard",
-          "lastname": "Ferre",
-          "fullname": "Eduard Ferre",
-          "email": "eduard@gmail.com",
-          "phone": "616127758",
-          "birthDate": "2000-04-07",
-          "age": 0,
-          "height": 0.0,
-          "weight": 0.0,
-          "physicalActivity": 0.0,
-          "role": "default",
-          "followers": [],
-          "following": [],
-          "postsLog": [],
-          "routinesLog": [],
-          "routines": [],
-          "profilePicture": "profile.jpg",
-          "backgroundPicture": "background.jpg",
-          "public": true
-        ]
+//        let parameters: [String: Any?] = [
+//          "username": "edu",
+//          "password": "edu",
+//          "firstname": "Eduard",
+//          "lastname": "Ferre",
+//          "fullname": "Eduard Ferre",
+//          "email": "eduard@gmail.com",
+//          "phone": "616127758",
+//          "birthDate": "2000-04-07",
+//          "age": 0,
+//          "height": 0.0,
+//          "weight": 0.0,
+//          "physicalActivity": 0.0,
+//          "role": "default",
+//          "followers": [],
+//          "following": [],
+//          "postsLog": [],
+//          "routinesLog": [],
+//          "routines": [],
+//          "profilePicture": "profile.jpg",
+//          "backgroundPicture": "background.jpg",
+//          "public": true
+//        ]
         
-        await APIManager.shared.callAPI(strURL: Constants.URL.endpointRegister, queryItems: queryItems, method: .post, headers: headers, parameters: parameters as Parameters, success: { response in
+        await APIManager.shared.callAPI(strURL: Constants.URL.endpointRegister, queryItems: queryItems, method: .post, headers: headers, parameters: parameters! as Parameters, success: { response in
             do {
                 if let data = response.data {
                     let createRegisterResponse = try JSONDecoder().decode(CreateRegisterResponse.self, from: data)
