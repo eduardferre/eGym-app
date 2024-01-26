@@ -50,6 +50,8 @@ class RegisterViewModel: ObservableObject {
             }
     }
     
+    //TODO: FIELDS VERIFICATION AND OTHER FEATURES
+    
     func setHasFailedFalse() {
         if self.hasFailed {
             self.hasFailed = false

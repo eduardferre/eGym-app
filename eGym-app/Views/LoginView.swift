@@ -121,20 +121,6 @@ struct LoginView: View {
     LoginView()
 }
 
-struct HeaderView: View {
-    var height: CGFloat
-    
-    var body: some View {
-        ZStack {
-            Image("eGym")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.main.bounds.width, height: height)
-        }.offset(y: -20)
-    }
-}
-
-
 // Structure creating a custom textFieldStyle
 struct WhiteBorder: TextFieldStyle {
     func _body(configuration: TextField<Self._Label>) -> some View {

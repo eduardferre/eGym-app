@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var isLoading = true
+    @State private var isLoading = false
+    @State private var tabSelected: Tab = .house
+        
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
     
     var body: some View {
         let noView: EmptyView = {
@@ -25,10 +30,15 @@ struct MainView: View {
         } else {
             ZStack {
                 VStack {
-                    Text("HOLA")
-                    Button(action: Auth.shared.logout, label: { Text("LOGOUT") })
+                    ToolBarView()
+                    Spacer()
                 }
-            }
+                
+                VStack {
+                    Spacer()
+                    TabBarView(selectedTab: $tabSelected)
+                }
+            }.background(Color("BrownApp"))
         }
     }
 }
