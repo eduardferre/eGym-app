@@ -23,6 +23,7 @@ class LoginViewModel: ObservableObject {
     func createLogin(request: CreateLoginRequest) async {
         await TransactionServices.shared.callCreateLogin(parameters: request.dictionary ?? [:]) { response in
             if let response = response {
+                self.errorMsg = ""
                 Auth.shared.setCredentials(accessToken: response.accessToken, refreshToken: response.refreshToken)
             }
         } failure: { error in
@@ -52,7 +53,9 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    func toggleFailed() {
-        self.hasFailed.toggle()
+    func setHasFailedFalse() {
+        if self.hasFailed {
+            self.hasFailed = false
+        }
     }
 }

@@ -15,11 +15,11 @@ struct TransactionServices {
         var headers = HTTPHeaders()
         headers["content-type"] = "application/x-www-form-urlencoded"
         
-//        let parameters: [String: String] = [
-//            "username": "eduardferre",
-//            "password": "edu",
-//            "grant_type": "password"
-//        ]
+        let parameters: [String: String] = [
+            "username": "eduardferre",
+            "password": "edu",
+            "grant_type": "password"
+        ]
         
         await APIManager.shared.callAPI(strURL: Constants.URL.endpointLogin, queryItems: queryItems, method: .post, headers: headers, parameters: parameters, success: { response in
             do {
@@ -41,8 +41,9 @@ struct TransactionServices {
         var headers = HTTPHeaders()
         headers["content-type"] = "application/json"
         
+        
         let parameters: [String: Any?] = [
-          "username": "eduuu",
+          "username": "edu",
           "password": "edu",
           "firstname": "Eduard",
           "lastname": "Ferre",
@@ -51,17 +52,17 @@ struct TransactionServices {
           "phone": "616127758",
           "birthDate": "2000-04-07",
           "age": 0,
-          "height": 0,
-          "weight": 0,
-          "physicalActivity": 0,
-          "role": "",
+          "height": 0.0,
+          "weight": 0.0,
+          "physicalActivity": 0.0,
+          "role": "default",
           "followers": [],
           "following": [],
           "postsLog": [],
           "routinesLog": [],
           "routines": [],
-          "profilePicture": "",
-          "backgroundPicture": "",
+          "profilePicture": "profile.jpg",
+          "backgroundPicture": "background.jpg",
           "public": true
         ]
         

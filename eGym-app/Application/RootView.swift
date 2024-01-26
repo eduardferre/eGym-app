@@ -10,10 +10,18 @@ import Foundation
 
 struct RootView: View {
     @EnvironmentObject var auth: Auth
-    @StateObject var rootViewModel = RootViewModel()
+    @State var isFirstTime: Bool = true
     
     var body: some View {
-        if $rootViewModel.isFirstTime.wrappedValue {
+        let noView: EmptyView = {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isFirstTime = false
+            }
+            return EmptyView()
+        }()
+        noView
+        
+        if isFirstTime {
             LoadingView()
         } else {
             if auth.isLoggedIn {
@@ -27,12 +35,4 @@ struct RootView: View {
 
 #Preview {
     RootView()
-}
-
-class RootViewModel: ObservableObject {
-    @Published var isFirstTime: Bool = true
-    
-    func setFalse() {
-        isFirstTime = false
-    }
 }

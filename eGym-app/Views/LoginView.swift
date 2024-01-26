@@ -68,7 +68,7 @@ struct LoginView: View {
                                 Task {
                                     await loginViewModel.createLogin(request: createLoginRequest)
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                                        loginViewModel.toggleFailed()
+                                        loginViewModel.setHasFailedFalse()
                                     }
                                 }
                         }, label: {

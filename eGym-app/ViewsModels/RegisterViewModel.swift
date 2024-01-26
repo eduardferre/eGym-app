@@ -11,6 +11,7 @@ class RegisterViewModel: ObservableObject {
     @Published var username = ""
     @Published var firstName = ""
     @Published var lastName = ""
+    @Published var phone = ""
     @Published var email = ""
     @Published var password = ""
     @Published var verifyPassword = ""
@@ -32,17 +33,26 @@ class RegisterViewModel: ObservableObject {
     @Published var isPasswordEmpty = false
     @Published var isVerifyPasswordEmpty = false
     
-    //TODO: Implement register validations and call register endpoint
+    @Published var errorMsg = ""
+    @Published var hasFailed = false
+    
     @Published var createRegisterResponse: CreateRegisterResponse?
     
-    func createRegister(request: CreateRegisterResponse) async {
+    func createRegister(request: CreateRegisterRequest) async {
         await TransactionServices.shared.callCreateRegister(parameters: request.dictionary ?? [:]) { response in
             if let response = response {
-                
+                self.errorMsg = ""
+                print(response)
             }
         } failure: { error in
-            print(error)
+            self.errorMsg = error.responseCode == 401 ? "Username/Password are invalid!" : "Ooops! There's a problem, sorry!"
+            self.hasFailed = true
             }
     }
     
+    func setHasFailedFalse() {
+        if self.hasFailed {
+            self.hasFailed = false
+        }
+    }
 }

@@ -17,9 +17,9 @@ struct CreateRegisterRequest: Codable {
     var phone: String
     var birthDate: String
     var age: Int
-    var height: Int
-    var weight: Int
-    var physicalActivity: Int
+    var height: Float
+    var weight: Float
+    var physicalActivity: Float
     var role: String
     var followers: [String]
     var following: [String]

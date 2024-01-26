@@ -40,9 +40,18 @@ public class APIManager {
             if let queryItems = queryItems {
                 url.queryItems = queryItems
             }
+        
+            let encoding: ParameterEncoding
+        
+            if headers?["content-type"] == "application/json" {
+                encoding = JSONEncoding.default
+            } else {
+                encoding = URLEncoding.default
+            }
+        
 
             // Network request
-            await AF.request(url, method: method, parameters: parameters, headers: headers)
+            await AF.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers)
                 .validate()
                 .responseJSON { response in
                     switch response.result {
