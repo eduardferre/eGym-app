@@ -17,9 +17,6 @@ enum Tab: String, CaseIterable {
 
 struct TabBarView: View {
     @Binding var selectedTab: Tab
-//    var fillImage: String {
-//       selectedTab.rawValue + ".fill"
-//    }
     var tabColor = Color("GoldApp")
 
 

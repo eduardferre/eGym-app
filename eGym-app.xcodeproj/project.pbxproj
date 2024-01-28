@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53130EDF2B65883F004ED066 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EDE2B65883F004ED066 /* SettingsView.swift */; };
+		53130EE12B6588C5004ED066 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EE02B6588C5004ED066 /* NotificationsView.swift */; };
+		53130EE32B6592A3004ED066 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EE22B6592A3004ED066 /* HomeView.swift */; };
+		53130EE52B659355004ED066 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EE42B659355004ED066 /* SearchView.swift */; };
+		53130EE92B6597AC004ED066 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EE82B6597AC004ED066 /* InventoryView.swift */; };
+		53130EEB2B6597BD004ED066 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EEA2B6597BD004ED066 /* CalendarView.swift */; };
+		53130EED2B6597C8004ED066 /* UploadVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EEC2B6597C8004ED066 /* UploadVideoView.swift */; };
+		53130EEF2B65E2A0004ED066 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EEE2B65E2A0004ED066 /* AddView.swift */; };
+		53130EF12B66E7BC004ED066 /* AddRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EF02B66E7BC004ED066 /* AddRoutineView.swift */; };
 		5328CF262B5EDC0F00F7BAB8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */; };
 		5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF282B5EFBEB00F7BAB8 /* Auth.swift */; };
 		5328CF2C2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5328CF2B2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper */; };
@@ -42,7 +51,6 @@
 		53E0D8D72B61D4A200A63179 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8D62B61D4A200A63179 /* RootView.swift */; };
 		53E0D8D92B61E65F00A63179 /* CreateRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8D82B61E65F00A63179 /* CreateRegisterResponse.swift */; };
 		53E0D8DB2B61E75B00A63179 /* CreateRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */; };
-		53FA8E872B643EC80077D8F9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8E862B643EC80077D8F9 /* TabBarView.swift */; };
 		53FA8E892B6443A70077D8F9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8E882B6443A70077D8F9 /* HeaderView.swift */; };
 		53FA8E8B2B6444A30077D8F9 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8E8A2B6444A30077D8F9 /* ToolBarView.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +73,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53130EDE2B65883F004ED066 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		53130EE02B6588C5004ED066 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		53130EE22B6592A3004ED066 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		53130EE42B659355004ED066 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		53130EE82B6597AC004ED066 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		53130EEA2B6597BD004ED066 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		53130EEC2B6597C8004ED066 /* UploadVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadVideoView.swift; sourceTree = "<group>"; };
+		53130EEE2B65E2A0004ED066 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		53130EF02B66E7BC004ED066 /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
 		5316C1E52B5A0ACB001D7019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5328CF282B5EFBEB00F7BAB8 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
@@ -100,7 +117,6 @@
 		53E0D8D62B61D4A200A63179 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		53E0D8D82B61E65F00A63179 /* CreateRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegisterResponse.swift; sourceTree = "<group>"; };
 		53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegisterRequest.swift; sourceTree = "<group>"; };
-		53FA8E862B643EC80077D8F9 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		53FA8E882B6443A70077D8F9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		53FA8E8A2B6444A30077D8F9 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,9 +240,17 @@
 				534703022B406E80001E0F50 /* LoginView.swift */,
 				535937D52B4DD26600EFA144 /* RegisterView.swift */,
 				5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */,
-				53FA8E862B643EC80077D8F9 /* TabBarView.swift */,
 				53FA8E882B6443A70077D8F9 /* HeaderView.swift */,
 				53FA8E8A2B6444A30077D8F9 /* ToolBarView.swift */,
+				53130EDE2B65883F004ED066 /* SettingsView.swift */,
+				53130EE02B6588C5004ED066 /* NotificationsView.swift */,
+				53130EE22B6592A3004ED066 /* HomeView.swift */,
+				53130EE42B659355004ED066 /* SearchView.swift */,
+				53130EE82B6597AC004ED066 /* InventoryView.swift */,
+				53130EEA2B6597BD004ED066 /* CalendarView.swift */,
+				53130EEC2B6597C8004ED066 /* UploadVideoView.swift */,
+				53130EEE2B65E2A0004ED066 /* AddView.swift */,
+				53130EF02B66E7BC004ED066 /* AddRoutineView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,29 +486,37 @@
 				535937D62B4DD26600EFA144 /* RegisterView.swift in Sources */,
 				53C599072B599BB600C9CA3D /* Constants.swift in Sources */,
 				5328CF332B61C9E800F7BAB8 /* KeychainKey.swift in Sources */,
+				53130EE32B6592A3004ED066 /* HomeView.swift in Sources */,
 				5328CF312B61C9C500F7BAB8 /* Credentials.swift in Sources */,
+				53130EED2B6597C8004ED066 /* UploadVideoView.swift in Sources */,
 				53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */,
 				532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */,
+				53130EEF2B65E2A0004ED066 /* AddView.swift in Sources */,
 				534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */,
 				5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */,
 				53E0D8DB2B61E75B00A63179 /* CreateRegisterRequest.swift in Sources */,
 				53FA8E8B2B6444A30077D8F9 /* ToolBarView.swift in Sources */,
 				534702D32B4066C1001E0F50 /* MainView.swift in Sources */,
+				53130EE12B6588C5004ED066 /* NotificationsView.swift in Sources */,
 				534703012B406E51001E0F50 /* ProfileView.swift in Sources */,
 				53E0D8D72B61D4A200A63179 /* RootView.swift in Sources */,
+				53130EE52B659355004ED066 /* SearchView.swift in Sources */,
+				53130EE92B6597AC004ED066 /* InventoryView.swift in Sources */,
 				53E0D8D92B61E65F00A63179 /* CreateRegisterResponse.swift in Sources */,
 				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
+				53130EEB2B6597BD004ED066 /* CalendarView.swift in Sources */,
 				53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */,
 				534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */,
 				53C599182B59EA6F00C9CA3D /* CreateLoginRequest.swift in Sources */,
 				53C599122B59E73200C9CA3D /* UserTOServices.swift in Sources */,
-				53FA8E872B643EC80077D8F9 /* TabBarView.swift in Sources */,
 				534703052B406EDB001E0F50 /* UserModel.swift in Sources */,
+				53130EDF2B65883F004ED066 /* SettingsView.swift in Sources */,
 				53C5990D2B599C5A00C9CA3D /* APIManager.swift in Sources */,
 				534703032B406E80001E0F50 /* LoginView.swift in Sources */,
 				53C599142B59E77C00C9CA3D /* TransactionServices.swift in Sources */,
 				5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */,
 				5328CF262B5EDC0F00F7BAB8 /* LoadingView.swift in Sources */,
+				53130EF12B66E7BC004ED066 /* AddRoutineView.swift in Sources */,
 				53FA8E892B6443A70077D8F9 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

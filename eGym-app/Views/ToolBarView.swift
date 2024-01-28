@@ -13,7 +13,10 @@ struct ToolBarView: View {
             HStack {
                 Image("avatar").resizable().aspectRatio(contentMode: .fit).frame(maxWidth: .infinity, maxHeight: 56, alignment: .leading).padding(.leading, 10)
                 Image("eGym-ToolBar").resizable().aspectRatio(contentMode: .fit).frame(maxWidth: .infinity, maxHeight: 56, alignment: .center)
-                Image("avatar").resizable().aspectRatio(contentMode: .fit).frame(maxWidth: .infinity, maxHeight: 56, alignment: .trailing)
+                HStack {
+                    Image(systemName: "bell").resizable().aspectRatio(contentMode: .fit).frame(height: 20).foregroundStyle(Color("BrokenWhiteApp")).padding(.trailing, 5)
+                    Image(systemName: "gearshape").resizable().aspectRatio(contentMode: .fit).frame(height: 20).foregroundStyle(.white).padding(.trailing, 15)
+                }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 56, alignment: .trailing)
             }
             .frame(maxWidth: .infinity, maxHeight: 60)
             .background(Color("BrownApp-Dark"))
