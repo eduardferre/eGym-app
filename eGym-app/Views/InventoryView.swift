@@ -14,38 +14,10 @@ struct CustomData: Identifiable {
 }
 
 struct InventoryView: View {
+    @StateObject var inventoryViewModel = InventoryViewModel()
     @State var toasting = false
     
     @Binding var addViewShowing: Bool
-    
-    let routines = [CustomData(name: "Leg Day"),
-                    CustomData(name: "Pull Day"),
-                    CustomData(name: "Press Day"),
-                    CustomData(name: "Pull Day"),
-                    CustomData(name: "Press Day"),
-                    CustomData(name: "Leg Day"),
-                    CustomData(name: "Pull Day"),
-                    CustomData(name: "Press Day"),
-                    CustomData(name: "Pull Day"),
-                    CustomData(name: "Press Day")]
-    
-    let exercises = [CustomData(name: "Squats"),
-                     CustomData(name: "Deadlifts"),
-                     CustomData(name: "Bench Press"),
-                     CustomData(name: "Lat Pulldowns"),
-                     CustomData(name: "Overhead Press"),
-                     CustomData(name: "Lunges"),
-                     CustomData(name: "Rows"),
-                     CustomData(name: "Incline Press"),
-                     CustomData(name: "Chin-ups"),
-                     CustomData(name: "Military Press"),
-                     CustomData(name: "Leg Curls"),
-                     CustomData(name: "Tricep Dips"),
-                     CustomData(name: "Hammer Curls"),
-                     CustomData(name: "Calf Raises"),
-                     CustomData(name: "Plank"),
-                     CustomData(name: "Russian Twists"),
-                     CustomData(name: "Leg Extensions")]
     
     var body: some View {
         NavigationStack {
@@ -77,14 +49,17 @@ struct InventoryView: View {
                             .foregroundStyle(Color("GoldApp"))
                             .bold()
                         ) {
-                            ForEach(routines) { routine in
+                            if inventoryViewModel.routinesList.isEmpty {
+                                Text("There are no routines yet!")
+                            }
+                            ForEach($inventoryViewModel.routinesList, id: \.id) { $routine in
                                 HStack {
-                                    Text(routine.name)
-                                        .foregroundStyle(Color("BrokenWhiteApp"))
+                                    Text($routine.wrappedValue.name)
+                                        .foregroundStyle(Color.white)
                                         .frame(alignment: .leading)
                                     Spacer()
                                     Image(systemName: "chevron.right")
-                                        .foregroundStyle(Color("BrokenWhiteApp"))
+                                        .foregroundStyle(Color.white)
                                         .frame(alignment: .trailing)
                                 }.contentShape(Rectangle())
                                     .onTapGesture {
@@ -97,14 +72,17 @@ struct InventoryView: View {
                             .foregroundStyle(Color("GoldApp"))
                             .bold()
                         ) {
-                            ForEach(exercises) { exercise in
+                            if inventoryViewModel.exercisesList.isEmpty {
+                                Text("There are no exercises yet!")
+                            }
+                            ForEach($inventoryViewModel.exercisesList, id: \.id) { $exercise in
                                 HStack {
-                                    Text(exercise.name)
-                                        .foregroundStyle(Color("BrokenWhiteApp"))
+                                    Text($exercise.wrappedValue.name)
+                                        .foregroundStyle(Color.white)
                                         .frame(alignment: .leading)
                                     Spacer()
                                     Image(systemName: "chevron.right")
-                                        .foregroundStyle(Color("BrokenWhiteApp"))
+                                        .foregroundStyle(Color.white)
                                         .frame(alignment: .trailing)
                                 }.contentShape(Rectangle())
                                     .onTapGesture {
@@ -117,6 +95,11 @@ struct InventoryView: View {
                     .toast(isPresenting: $toasting) {
                         AlertToast(displayMode: .alert, type: .systemImage("exclamationmark.triangle.fill", Color.yellow), title: "NOT IMPLEMENTED YET")
                     }
+            }
+        }.onAppear {
+            Task {
+                await inventoryViewModel.getRoutinesTO()
+                await inventoryViewModel.getExercisesTO()
             }
         }
     }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+import SwiftKeychainWrapper
 
 class LoginViewModel: ObservableObject {
     @Published var username = ""
@@ -20,11 +20,14 @@ class LoginViewModel: ObservableObject {
     
     @Published var createLoginResponse: CreateLoginResponse?
     
+    private let keychain: KeychainWrapper = KeychainWrapper.standard
+
     func createLogin(request: CreateLoginRequest) async {
         await TransactionServices.shared.callCreateLogin(parameters: request.dictionary ?? [:]) { response in
             if let response = response {
                 self.errorMsg = ""
-                Auth.shared.setCredentials(accessToken: response.accessToken, refreshToken: response.refreshToken)
+                print(self.username)
+                Auth.shared.setCredentials(accessToken: response.accessToken, refreshToken: response.refreshToken, username: self.username)
             }
         } failure: { error in
             self.errorMsg = error.responseCode == 401 ? "Username/Password are invalid!" : "Ooops! There's a problem, sorry!"

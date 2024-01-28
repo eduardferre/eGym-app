@@ -22,13 +22,15 @@ class Auth: ObservableObject {
     func getCredentials() -> Credentials {
         return Credentials(
             accessToken: keychain.string(forKey: KeychainKey.accessToken.rawValue),
-            refreshToken: keychain.string(forKey: KeychainKey.refreshToken.rawValue)
+            refreshToken: keychain.string(forKey: KeychainKey.refreshToken.rawValue),
+            username: keychain.string(forKey: KeychainKey.username.rawValue)
         )
     }
     
-    func setCredentials(accessToken: String, refreshToken: String) {
+    func setCredentials(accessToken: String, refreshToken: String, username: String) {
         keychain.set(accessToken, forKey: KeychainKey.accessToken.rawValue)
         keychain.set(refreshToken, forKey: KeychainKey.refreshToken.rawValue)
+        keychain.set(username, forKey: KeychainKey.username.rawValue)
         
         isLoggedIn = true
     }
@@ -43,6 +45,10 @@ class Auth: ObservableObject {
 
     func getRefreshToken() -> String? {
         return getCredentials().refreshToken
+    }
+    
+    func getUsername() -> String? {
+        return getCredentials().username
     }
 
     func logout() {
