@@ -8,5 +8,8 @@
 import Foundation
 
 class AddExerciseViewModel: ObservableObject {
-
+    @Published var exerciseName = ""
+    @Published var exerciseDescription = ""
+    
+    
 }

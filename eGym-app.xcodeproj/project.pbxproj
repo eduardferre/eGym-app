@@ -22,6 +22,8 @@
 		53130EFB2B6701AB004ED066 /* GetExercisesTOResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EFA2B6701AB004ED066 /* GetExercisesTOResponse.swift */; };
 		53130EFD2B670485004ED066 /* AddExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EFC2B670485004ED066 /* AddExerciseView.swift */; };
 		53130EFF2B670533004ED066 /* AddExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130EFE2B670533004ED066 /* AddExerciseViewModel.swift */; };
+		53130F012B672BC4004ED066 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130F002B672BC4004ED066 /* AddViewModel.swift */; };
+		53130F032B672E08004ED066 /* AddExerciseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53130F022B672E08004ED066 /* AddExerciseListViewModel.swift */; };
 		5328CF262B5EDC0F00F7BAB8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */; };
 		5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5328CF282B5EFBEB00F7BAB8 /* Auth.swift */; };
 		5328CF2C2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 5328CF2B2B5EFF0A00F7BAB8 /* SwiftKeychainWrapper */; };
@@ -94,6 +96,8 @@
 		53130EFA2B6701AB004ED066 /* GetExercisesTOResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetExercisesTOResponse.swift; sourceTree = "<group>"; };
 		53130EFC2B670485004ED066 /* AddExerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseView.swift; sourceTree = "<group>"; };
 		53130EFE2B670533004ED066 /* AddExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewModel.swift; sourceTree = "<group>"; };
+		53130F002B672BC4004ED066 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
+		53130F022B672E08004ED066 /* AddExerciseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseListViewModel.swift; sourceTree = "<group>"; };
 		5316C1E52B5A0ACB001D7019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5328CF252B5EDC0F00F7BAB8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5328CF282B5EFBEB00F7BAB8 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
@@ -276,7 +280,9 @@
 				5347030A2B406F1D001E0F50 /* LoginViewModel.swift */,
 				532D35482B4F448500C6A9BF /* RegisterViewModel.swift */,
 				53130EF42B66E8E7004ED066 /* InventoryViewModel.swift */,
+				53130F002B672BC4004ED066 /* AddViewModel.swift */,
 				53130EFE2B670533004ED066 /* AddExerciseViewModel.swift */,
+				53130F022B672E08004ED066 /* AddExerciseListViewModel.swift */,
 			);
 			path = ViewsModels;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 				53130EF52B66E8E7004ED066 /* InventoryViewModel.swift in Sources */,
 				53C599072B599BB600C9CA3D /* Constants.swift in Sources */,
 				5328CF332B61C9E800F7BAB8 /* KeychainKey.swift in Sources */,
+				53130F032B672E08004ED066 /* AddExerciseListViewModel.swift in Sources */,
 				53130EE32B6592A3004ED066 /* HomeView.swift in Sources */,
 				5328CF312B61C9C500F7BAB8 /* Credentials.swift in Sources */,
 				53130EED2B6597C8004ED066 /* UploadVideoView.swift in Sources */,
@@ -531,6 +538,7 @@
 				534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */,
 				53C599182B59EA6F00C9CA3D /* CreateLoginRequest.swift in Sources */,
 				53130EFD2B670485004ED066 /* AddExerciseView.swift in Sources */,
+				53130F012B672BC4004ED066 /* AddViewModel.swift in Sources */,
 				53130EF92B66ED30004ED066 /* ExerciseTOModel.swift in Sources */,
 				53C599122B59E73200C9CA3D /* UserTOServices.swift in Sources */,
 				534703052B406EDB001E0F50 /* UserModel.swift in Sources */,
