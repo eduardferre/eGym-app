@@ -32,7 +32,7 @@ class LoginViewModel: ObservableObject {
         } failure: { error in
             self.errorMsg = error.responseCode == 401 ? "Username/Password are invalid!" : "Ooops! There's a problem, sorry!"
             self.hasFailed = true
-            }
+        }
     }
     
     func validate() {

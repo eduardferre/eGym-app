@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var homeViewModel = HomeViewModel()
+    
     var body: some View {
         ZStack {
             VStack {
                 Text("HOME")
+                
+                Button {
+                    homeViewModel.logout()
+                } label: {
+                    Text("Log Out")
+                    Image(systemName: "text.badge.plus")
+                }
             }
         }
     }

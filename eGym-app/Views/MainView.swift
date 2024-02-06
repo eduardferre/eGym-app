@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var isLoading = false
+    @State private var isLoading = true
     @State var addViewShowing = false
     
     @State private var selectedTab: Int = 0

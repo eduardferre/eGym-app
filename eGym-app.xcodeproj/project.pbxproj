@@ -61,6 +61,7 @@
 		53E0D8DB2B61E75B00A63179 /* CreateRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */; };
 		53FA8E892B6443A70077D8F9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8E882B6443A70077D8F9 /* HeaderView.swift */; };
 		53FA8E8B2B6444A30077D8F9 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8E8A2B6444A30077D8F9 /* ToolBarView.swift */; };
+		53FAB4A32B71722900D3BB7B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FAB4A22B71722900D3BB7B /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegisterRequest.swift; sourceTree = "<group>"; };
 		53FA8E882B6443A70077D8F9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		53FA8E8A2B6444A30077D8F9 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		53FAB4A22B71722900D3BB7B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 				53130F002B672BC4004ED066 /* AddViewModel.swift */,
 				53130EFE2B670533004ED066 /* AddExerciseViewModel.swift */,
 				53130F022B672E08004ED066 /* AddExerciseListViewModel.swift */,
+				53FAB4A22B71722900D3BB7B /* HomeViewModel.swift */,
 			);
 			path = ViewsModels;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				53130EF72B66EAB5004ED066 /* GetRoutinesResponse.swift in Sources */,
 				53130EE92B6597AC004ED066 /* InventoryView.swift in Sources */,
 				53130EFB2B6701AB004ED066 /* GetExercisesTOResponse.swift in Sources */,
+				53FAB4A32B71722900D3BB7B /* HomeViewModel.swift in Sources */,
 				53E0D8D92B61E65F00A63179 /* CreateRegisterResponse.swift in Sources */,
 				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
 				53130EFF2B670533004ED066 /* AddExerciseViewModel.swift in Sources */,
