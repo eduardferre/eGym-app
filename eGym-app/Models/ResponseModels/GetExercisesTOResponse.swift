@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetExercisesTOResponse: Codable {
+struct GetExercisesTOResponse: Codable, Hashable {
     var id: String
     var creator: String
     var name: String

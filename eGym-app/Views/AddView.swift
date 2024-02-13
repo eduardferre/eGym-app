@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct AddView: View {
+    
     @StateObject private var addExerciseListViewModel = AddExerciseListViewModel()
+    @StateObject private var addViewModel = AddViewModel()
     
     @Binding var addViewShowing: Bool
     @State private var selection = "Select an option to create"
     @State private var views: [String] = []
+    
+    @StateObject var inventoryViewModel = InventoryViewModel()
+    @State var multiSelection: [GetExercisesTOResponse] = []
+    @State var listExercices: [GetExercisesTOResponse] = []
     
     var body: some View {
         ZStack {
@@ -46,49 +52,81 @@ struct AddView: View {
                                 .foregroundStyle(Color("GoldApp"))
                                 .bold()
                             
-                            ForEach(addExerciseListViewModel.exerciseViewModels.indices, id: \.self) {index in
-                                if index > 0 {
-                                    Divider().background(Color("BrokenWhiteApp"))
+                            
+                            
+                            if selection == "Routine" {
+                                VStack {
+                                    ForEach(addExerciseListViewModel.exerciseViewModels.indices, id: \.self) { index in
+                                        AddRoutineView(addRoutineViewModel: addViewModel.routinesViewModel[index]).padding(.bottom, 5)
+                                    }.onAppear {
+                                        listExercices = inventoryViewModel.exercisesList
+                                    }
+                                        
+                                    
+                                    Text("Exercises")
+                                        .bold()
+                                        .foregroundStyle(Color("GoldApp"))
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.leading, 30)
+                                    
+                                    NavigationView {
+                                        List {
+                                            ForEach(listExercices, id: \.self) { exercise in
+                                                MultipleSelectionRow(title: exercise.name, isSelected: self.multiSelection.contains(exercise)) {
+                                                    if self.multiSelection.contains(exercise) {
+                                                        self.multiSelection.removeAll(where: { $0 == exercise })
+                                                        
+                                                    } else {
+                                                        self.multiSelection.append(exercise)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .background(Color("BrownApp"))
+                                        .foregroundStyle(Color("GoldApp"))
+                                        .scrollContentBackground(.hidden)
+                                    }
                                 }
+                                
+                            } else if selection == "Exercise" {
+                                ForEach(addExerciseListViewModel.exerciseViewModels.indices, id: \.self) { index in
+                                    if index > 0 {
+                                        Divider().background(Color("BrokenWhiteApp"))
+                                    }
                                     Text("Exercise \(index + 1)")
                                         .bold()
                                         .foregroundStyle(Color("GoldApp"))
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding(.leading, 30)
                                     AddExerciseView(addExerciseViewModel: addExerciseListViewModel.exerciseViewModels[index]).padding(.bottom, 5)
-                            }
-                            
-                            HStack {
-                                Button(action: {
-                                    addView()
-                                }, label: {
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 20.0)
-                                            .foregroundColor(Color("GoldApp"))
-                                        Text("Add another one")
-                                            .foregroundColor(Color.white)
-                                            .bold()
-                                    }
-                                })
-                                .frame(width: UIScreen.main.bounds.width * 0.45, height: 60)
-                                Button(action: {
-                                    deleteView()
-                                }, label: {
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 20.0)
-                                            .foregroundColor(Color.red.opacity(0.8))
-                                        Text("Delete Exercise")
-                                            .foregroundColor(Color.white)
-                                            .bold()
-                                    }
-                                }).disabled(addExerciseListViewModel.exerciseViewModels.count == 1)
-                                .frame(width: UIScreen.main.bounds.width * 0.45, height: 60)
-                            }.id(10)
-                            
-                            if selection == "Routine" {
-                                AddRoutineView()
-                            } else if selection == "Exercise" {
-                                AddExerciseView()
+                                }
+                                
+                                HStack {
+                                    Button(action: {
+                                        addView()
+                                    }, label: {
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 20.0)
+                                                .foregroundColor(Color("GoldApp"))
+                                            Text("Add another one")
+                                                .foregroundColor(Color.white)
+                                                .bold()
+                                        }
+                                    })
+                                    .frame(width: UIScreen.main.bounds.width * 0.45, height: 60)
+                                    Button(action: {
+                                        deleteView()
+                                    }, label: {
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 20.0)
+                                                .foregroundColor(Color.red.opacity(0.8))
+                                            Text("Delete Exercise")
+                                                .foregroundColor(Color.white)
+                                                .bold()
+                                        }
+                                    }).disabled(addExerciseListViewModel.exerciseViewModels.count == 1)
+                                        .frame(width: UIScreen.main.bounds.width * 0.45, height: 60)
+                                }.id(10)
                             }
                             
                         }.onChange(of: addExerciseListViewModel.exerciseViewModels.count) {
@@ -117,11 +155,25 @@ struct AddView: View {
                             .bold()
                             .foregroundStyle(Color("GoldApp")).frame(alignment: .trailing)
                             .onTapGesture {
-                                print(addExerciseListViewModel.exerciseViewModels.first?.exerciseName)
+                                if (selection == "Exercise") {
+                                    Task {
+                                        await addExerciseListViewModel.addExercisesToDB()
+                                    }
+                                } else if (selection == "Routine") {
+                                    Task {
+                                        await addViewModel.addRoutineToDB(exercices: listExercices)
+                                    }
+                                }
                                 self.addViewShowing = false
                             }
                     }
-                }.background(Color("BrownApp"))
+                }
+                .background(Color("BrownApp"))
+                .onAppear {
+                    Task {
+                        await inventoryViewModel.getExercisesTO()
+                    }
+                }
             }
         }
     }
