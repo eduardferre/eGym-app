@@ -32,9 +32,12 @@
 		5328CF362B61CD5B00F7BAB8 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5328CF352B61CD5B00F7BAB8 /* .swiftlint.yml */; };
 		532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D35482B4F448500C6A9BF /* RegisterViewModel.swift */; };
 		532D354C2B4F513E00C6A9BF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 532D354B2B4F513E00C6A9BF /* SwiftyJSON */; };
+		5335FFDA2B7BEC1B002F80DC /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335FFD92B7BEC1B002F80DC /* PostModel.swift */; };
+		5335FFDC2B7BECA8002F80DC /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335FFDB2B7BECA8002F80DC /* CommentModel.swift */; };
+		5335FFE02B7BEE51002F80DC /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335FFDF2B7BEE51002F80DC /* PostServices.swift */; };
+		5335FFE42B7C0A06002F80DC /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335FFE32B7C0A06002F80DC /* PostView.swift */; };
 		534255BF2B7AED8A0041AE7C /* AddRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534255BE2B7AED8A0041AE7C /* AddRoutineViewModel.swift */; };
 		534255C12B7B05A80041AE7C /* RoutineTOModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534255C02B7B05A80041AE7C /* RoutineTOModel.swift */; };
-		534255C32B7B0C4F0041AE7C /* TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534255C22B7B0C4F0041AE7C /* TEST.swift */; };
 		534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D02B4066C1001E0F50 /* eGymApp.swift */; };
 		534702D32B4066C1001E0F50 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534702D22B4066C1001E0F50 /* MainView.swift */; };
 		534702D52B4066C3001E0F50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534702D42B4066C3001E0F50 /* Assets.xcassets */; };
@@ -51,6 +54,12 @@
 		5347030B2B406F1D001E0F50 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347030A2B406F1D001E0F50 /* LoginViewModel.swift */; };
 		535937D62B4DD26600EFA144 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535937D52B4DD26600EFA144 /* RegisterView.swift */; };
 		53716BCA2B62E8F200FC1F9F /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 53716BC92B62E8F200FC1F9F /* AlertToast */; };
+		537D61572B7D6D3600C06D5F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D61562B7D6D3600C06D5F /* CalendarViewModel.swift */; };
+		537D61592B7D6D8700C06D5F /* RoutineServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D61582B7D6D8700C06D5F /* RoutineServices.swift */; };
+		537D615B2B7D6E9F00C06D5F /* RoutineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D615A2B7D6E9F00C06D5F /* RoutineModel.swift */; };
+		537D615D2B7D6EDE00C06D5F /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D615C2B7D6EDE00C06D5F /* ExerciseModel.swift */; };
+		537D615F2B7D6F1C00C06D5F /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D615E2B7D6F1C00C06D5F /* SetModel.swift */; };
+		537D61612B7D792300C06D5F /* CustomCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537D61602B7D792300C06D5F /* CustomCalendarView.swift */; };
 		53C599072B599BB600C9CA3D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599062B599BB600C9CA3D /* Constants.swift */; };
 		53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599082B599C1B00C9CA3D /* Extensions.swift */; };
 		53C5990D2B599C5A00C9CA3D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C5990C2B599C5A00C9CA3D /* APIManager.swift */; };
@@ -59,6 +68,8 @@
 		53C599142B59E77C00C9CA3D /* TransactionServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599132B59E77C00C9CA3D /* TransactionServices.swift */; };
 		53C599182B59EA6F00C9CA3D /* CreateLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */; };
 		53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */; };
+		53CB1D0F2B7C49DD000C544F /* CustomTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB1D0E2B7C49DD000C544F /* CustomTagView.swift */; };
+		53CB1D112B7C503C000C544F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CB1D102B7C503C000C544F /* SearchViewModel.swift */; };
 		53E0D8D72B61D4A200A63179 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8D62B61D4A200A63179 /* RootView.swift */; };
 		53E0D8D92B61E65F00A63179 /* CreateRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8D82B61E65F00A63179 /* CreateRegisterResponse.swift */; };
 		53E0D8DB2B61E75B00A63179 /* CreateRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */; };
@@ -109,9 +120,12 @@
 		5328CF322B61C9E800F7BAB8 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		5328CF352B61CD5B00F7BAB8 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		532D35482B4F448500C6A9BF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		5335FFD92B7BEC1B002F80DC /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		5335FFDB2B7BECA8002F80DC /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		5335FFDF2B7BEE51002F80DC /* PostServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
+		5335FFE32B7C0A06002F80DC /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		534255BE2B7AED8A0041AE7C /* AddRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineViewModel.swift; sourceTree = "<group>"; };
 		534255C02B7B05A80041AE7C /* RoutineTOModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTOModel.swift; sourceTree = "<group>"; };
-		534255C22B7B0C4F0041AE7C /* TEST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TEST.swift; sourceTree = "<group>"; };
 		534702CD2B4066C1001E0F50 /* eGym-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eGym-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		534702D02B4066C1001E0F50 /* eGymApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eGymApp.swift; sourceTree = "<group>"; };
 		534702D22B4066C1001E0F50 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -130,6 +144,12 @@
 		534703082B406F15001E0F50 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		5347030A2B406F1D001E0F50 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		535937D52B4DD26600EFA144 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		537D61562B7D6D3600C06D5F /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		537D61582B7D6D8700C06D5F /* RoutineServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineServices.swift; sourceTree = "<group>"; };
+		537D615A2B7D6E9F00C06D5F /* RoutineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineModel.swift; sourceTree = "<group>"; };
+		537D615C2B7D6EDE00C06D5F /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		537D615E2B7D6F1C00C06D5F /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
+		537D61602B7D792300C06D5F /* CustomCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalendarView.swift; sourceTree = "<group>"; };
 		53C599062B599BB600C9CA3D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		53C599082B599C1B00C9CA3D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		53C5990C2B599C5A00C9CA3D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -137,6 +157,8 @@
 		53C599132B59E77C00C9CA3D /* TransactionServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServices.swift; sourceTree = "<group>"; };
 		53C599172B59EA6F00C9CA3D /* CreateLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoginRequest.swift; sourceTree = "<group>"; };
 		53C599192B59EA7E00C9CA3D /* CreateLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoginResponse.swift; sourceTree = "<group>"; };
+		53CB1D0E2B7C49DD000C544F /* CustomTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTagView.swift; sourceTree = "<group>"; };
+		53CB1D102B7C503C000C544F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		53E0D8D62B61D4A200A63179 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		53E0D8D82B61E65F00A63179 /* CreateRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegisterResponse.swift; sourceTree = "<group>"; };
 		53E0D8DA2B61E75B00A63179 /* CreateRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegisterRequest.swift; sourceTree = "<group>"; };
@@ -276,6 +298,9 @@
 				53130EEE2B65E2A0004ED066 /* AddView.swift */,
 				53130EF02B66E7BC004ED066 /* AddRoutineView.swift */,
 				53130EFC2B670485004ED066 /* AddExerciseView.swift */,
+				5335FFE32B7C0A06002F80DC /* PostView.swift */,
+				53CB1D0E2B7C49DD000C544F /* CustomTagView.swift */,
+				537D61602B7D792300C06D5F /* CustomCalendarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +318,8 @@
 				53130F022B672E08004ED066 /* AddExerciseListViewModel.swift */,
 				53FAB4A22B71722900D3BB7B /* HomeViewModel.swift */,
 				534255BE2B7AED8A0041AE7C /* AddRoutineViewModel.swift */,
+				53CB1D102B7C503C000C544F /* SearchViewModel.swift */,
+				537D61562B7D6D3600C06D5F /* CalendarViewModel.swift */,
 			);
 			path = ViewsModels;
 			sourceTree = "<group>";
@@ -306,7 +333,11 @@
 				534703042B406EDB001E0F50 /* UserModel.swift */,
 				53130EF82B66ED30004ED066 /* ExerciseTOModel.swift */,
 				534255C02B7B05A80041AE7C /* RoutineTOModel.swift */,
-				534255C22B7B0C4F0041AE7C /* TEST.swift */,
+				5335FFD92B7BEC1B002F80DC /* PostModel.swift */,
+				5335FFDB2B7BECA8002F80DC /* CommentModel.swift */,
+				537D615A2B7D6E9F00C06D5F /* RoutineModel.swift */,
+				537D615C2B7D6EDE00C06D5F /* ExerciseModel.swift */,
+				537D615E2B7D6F1C00C06D5F /* SetModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -350,6 +381,8 @@
 				53C5990C2B599C5A00C9CA3D /* APIManager.swift */,
 				53C599112B59E73200C9CA3D /* UserTOServices.swift */,
 				53C599132B59E77C00C9CA3D /* TransactionServices.swift */,
+				5335FFDF2B7BEE51002F80DC /* PostServices.swift */,
+				537D61582B7D6D8700C06D5F /* RoutineServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -520,8 +553,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				535937D62B4DD26600EFA144 /* RegisterView.swift in Sources */,
+				5335FFDA2B7BEC1B002F80DC /* PostModel.swift in Sources */,
+				537D61592B7D6D8700C06D5F /* RoutineServices.swift in Sources */,
 				53130EF52B66E8E7004ED066 /* InventoryViewModel.swift in Sources */,
 				53C599072B599BB600C9CA3D /* Constants.swift in Sources */,
+				5335FFDC2B7BECA8002F80DC /* CommentModel.swift in Sources */,
 				5328CF332B61C9E800F7BAB8 /* KeychainKey.swift in Sources */,
 				53130F032B672E08004ED066 /* AddExerciseListViewModel.swift in Sources */,
 				53130EE32B6592A3004ED066 /* HomeView.swift in Sources */,
@@ -529,28 +565,35 @@
 				53130EED2B6597C8004ED066 /* UploadVideoView.swift in Sources */,
 				53C5991A2B59EA7E00C9CA3D /* CreateLoginResponse.swift in Sources */,
 				532D35492B4F448500C6A9BF /* RegisterViewModel.swift in Sources */,
+				53CB1D0F2B7C49DD000C544F /* CustomTagView.swift in Sources */,
 				53130EEF2B65E2A0004ED066 /* AddView.swift in Sources */,
 				534703072B406F0B001E0F50 /* MainViewModel.swift in Sources */,
 				5328CF292B5EFBEB00F7BAB8 /* Auth.swift in Sources */,
 				53E0D8DB2B61E75B00A63179 /* CreateRegisterRequest.swift in Sources */,
+				53CB1D112B7C503C000C544F /* SearchViewModel.swift in Sources */,
+				537D61612B7D792300C06D5F /* CustomCalendarView.swift in Sources */,
 				53FA8E8B2B6444A30077D8F9 /* ToolBarView.swift in Sources */,
 				534255C12B7B05A80041AE7C /* RoutineTOModel.swift in Sources */,
 				534702D32B4066C1001E0F50 /* MainView.swift in Sources */,
+				5335FFE02B7BEE51002F80DC /* PostServices.swift in Sources */,
 				53130EE12B6588C5004ED066 /* NotificationsView.swift in Sources */,
 				534703012B406E51001E0F50 /* ProfileView.swift in Sources */,
 				53E0D8D72B61D4A200A63179 /* RootView.swift in Sources */,
 				53130EE52B659355004ED066 /* SearchView.swift in Sources */,
 				53130EF72B66EAB5004ED066 /* GetRoutinesResponse.swift in Sources */,
+				537D615B2B7D6E9F00C06D5F /* RoutineModel.swift in Sources */,
 				53130EE92B6597AC004ED066 /* InventoryView.swift in Sources */,
 				53130EFB2B6701AB004ED066 /* GetExercisesTOResponse.swift in Sources */,
 				53FAB4A32B71722900D3BB7B /* HomeViewModel.swift in Sources */,
 				53E0D8D92B61E65F00A63179 /* CreateRegisterResponse.swift in Sources */,
+				537D61572B7D6D3600C06D5F /* CalendarViewModel.swift in Sources */,
 				534703092B406F15001E0F50 /* ProfileViewModel.swift in Sources */,
-				534255C32B7B0C4F0041AE7C /* TEST.swift in Sources */,
 				53130EFF2B670533004ED066 /* AddExerciseViewModel.swift in Sources */,
 				53130EEB2B6597BD004ED066 /* CalendarView.swift in Sources */,
 				53C599092B599C1B00C9CA3D /* Extensions.swift in Sources */,
 				534702D12B4066C1001E0F50 /* eGymApp.swift in Sources */,
+				537D615D2B7D6EDE00C06D5F /* ExerciseModel.swift in Sources */,
+				537D615F2B7D6F1C00C06D5F /* SetModel.swift in Sources */,
 				53C599182B59EA6F00C9CA3D /* CreateLoginRequest.swift in Sources */,
 				53130EFD2B670485004ED066 /* AddExerciseView.swift in Sources */,
 				53130F012B672BC4004ED066 /* AddViewModel.swift in Sources */,
@@ -559,6 +602,7 @@
 				534255BF2B7AED8A0041AE7C /* AddRoutineViewModel.swift in Sources */,
 				534703052B406EDB001E0F50 /* UserModel.swift in Sources */,
 				53130EDF2B65883F004ED066 /* SettingsView.swift in Sources */,
+				5335FFE42B7C0A06002F80DC /* PostView.swift in Sources */,
 				53C5990D2B599C5A00C9CA3D /* APIManager.swift in Sources */,
 				534703032B406E80001E0F50 /* LoginView.swift in Sources */,
 				53C599142B59E77C00C9CA3D /* TransactionServices.swift in Sources */,

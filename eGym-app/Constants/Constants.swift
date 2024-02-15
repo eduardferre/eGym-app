@@ -44,7 +44,7 @@ public struct Constants {
         /// `ROUTINES_TO`
         static let endpointGetRoutinesTO: String = routinesTOPath + "/"
         static let endpointGetRoutineTOById: String = routinesTOPath + "/" //{id}
-        static let endpointGetRoutineTOByName: String = routinesTOPath + "/routineName/" //{name}
+        static let endpointGetRoutinesTOByName: String = routinesTOPath + "/routineName/" //{name}
         static let endpointGetRoutinesTOByCreator: String = routinesTOPath + "/creator/" //{creator}
         static let endpointAddRoutineTO: String = routinesTOPath + "/"
         static let endpointAddExerciseToRoutineTO: String = routinesTOPath + "/" //{routineId}_{exerciseId}
@@ -58,7 +58,7 @@ public struct Constants {
         static let endpointUpdateUser: String = usersPath + "/"
         static let endpointDeleteUser: String = usersPath + "/" //{id}
         static let endpointDeleteAllUsers: String = usersPath + "/"
-        static let endpointGetPublicUsers: String = usersPath + "/" //{attribute}/{value}
+        static let endpointGetPublicUsers: String = usersPath + "/public/" //{attribute}/{value}
         static let endpointFollowUser: String = usersPath + "/" //{follower}/{followed}
         static let endpointUnfollowUser: String = usersPath + "/" //{follower}/{unfollowed}
         

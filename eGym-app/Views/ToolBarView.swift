@@ -16,6 +16,9 @@ struct ToolBarView: View {
                 HStack {
                     Image(systemName: "bell").resizable().aspectRatio(contentMode: .fit).frame(height: 20).foregroundStyle(Color("BrokenWhiteApp")).padding(.trailing, 5)
                     Image(systemName: "gearshape").resizable().aspectRatio(contentMode: .fit).frame(height: 20).foregroundStyle(.white).padding(.trailing, 15)
+                        .onTapGesture {
+                            Auth.shared.logout()
+                        }
                 }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 56, alignment: .trailing)
             }
             .frame(maxWidth: .infinity, maxHeight: 60)

@@ -30,7 +30,6 @@ class AddExerciseListViewModel: ObservableObject {
     }
     
     public func addExercisesToDB() async {
-        print(exerciseViewModels)
         for exercise in exerciseViewModels {
             let exerciseTO: ExerciseTOModel = ExerciseTOModel(id: "", creator: Auth.shared.getUsername()!, name: exercise.exerciseName, description: exercise.exerciseDescription)
             

@@ -36,10 +36,10 @@ struct MainView: View {
                     TabView(selection: $selectedTab)
                     {
                         Group {
-//                            HomeView()
-//                                .tabItem {
-//                                    Label("Home", systemImage: "house")
-//                                }.tag(0)
+                            HomeView()
+                                .tabItem {
+                                    Label("Home", systemImage: "house")
+                                }.tag(0)
                             
                             SearchView()
                                 .tabItem {

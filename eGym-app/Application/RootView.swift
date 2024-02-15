@@ -14,9 +14,11 @@ struct RootView: View {
     
     var body: some View {
         let noView: EmptyView = {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                isFirstTime = false
-                //TODO: check credentials
+            if(isFirstTime) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    isFirstTime = false
+                    //TODO: check credentials
+                }
             }
             return EmptyView()
         }()
